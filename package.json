@@ -1,0 +1,16 @@
+{
+  "private": true,
+  "name": "rebass.github.io",
+  "scripts": {
+    "start": "mdx-go src",
+    "build": "mdx-go build src -d docs"
+  },
+  "devDependencies": {
+    "mdx-go": "^1.0.10"
+  },
+  "dependencies": {
+    "rebass": "^2.1.0",
+    "styled-components": "^3.4.5",
+    "styled-system": "^3.0.2"
+  }
+}
