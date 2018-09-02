@@ -3,7 +3,9 @@
   "name": "rebass.github.io",
   "scripts": {
     "start": "mdx-go src",
-    "build": "mdx-go build src -d ."
+    "build": "mdx-go build src -d dist",
+    "svg": "scrs src/Logo.js --svg > src/logo.svg",
+    "card": "repng src/Card.js -w 1024 -h 512 -d src -f card.png"
   },
   "dependencies": {
     "@rebass/mdx": "^1.0.0",
@@ -13,7 +15,7 @@
     "repng": "^3.0.2",
     "rmdi": "^1.0.1",
     "scrs": "^1.1.0",
-    "sidepane": "^1.0.0-1",
+    "sidepane": "^1.0.0-3",
     "styled-components": "^3.4.5",
     "styled-system": "^3.0.2"
   }

@@ -23,7 +23,7 @@ import {
   Text,
   theme
 } from 'rebass'
-import { display } from 'styled-system'
+import { display, color } from 'styled-system'
 import MenuIcon from 'rmdi/lib/Menu'
 import RebassMDX from '@rebass/mdx'
 import Sidepane from 'sidepane'
@@ -62,6 +62,15 @@ NavBar.defaultProps = {
   display: [ 'flex', 'none' ],
   alignItems: 'center',
 }
+
+export const SidepaneRoot = styled(Sidepane)({
+  '& .sidepane-bar': {
+    backgroundColor: 'white',
+  },
+  '& .sidepane-overlay': {
+    backgroundColor: 'rgba(0, 0, 0, .125)'
+  }
+})
 
 export const SideNav = props =>
   <Box pt={3} pb={5}>
@@ -118,7 +127,7 @@ export const Pagination = props => {
 }
 
 export const PageLayout = props =>
-  <Sidepane
+  <SidepaneRoot
     render={({ togglePane }) => (
       <React.Fragment>
         <NavBar>
