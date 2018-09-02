@@ -9,7 +9,7 @@
     "card": "repng src/Card.js -w 1024 -h 512 -d src -f card.png",
     "icon": "repng src/Icon.js -w 512 -h 512 -d src -f icon.png"
   },
-  "peerDependencies": {
+  "devDependencies": {
     "repng": "^3.0.2"
   },
   "dependencies": {

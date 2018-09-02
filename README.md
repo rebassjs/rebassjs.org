@@ -3,9 +3,9 @@
 
 <https://rebassjs.org>
 
+- [ ] fix card/icon
 - [ ] update ga
-- [ ] update build script
-- [ ] clean script
-- [ ] custom rebass layout
-- [ ] travis build
 - [ ] Avatar/Icon
+- [x] update build script
+- [x] custom rebass layout
+- [x] travis build
