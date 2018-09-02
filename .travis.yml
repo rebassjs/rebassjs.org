@@ -1,11 +1,11 @@
 language: node_js
 node-js:
   - 10
-install:
-  - npm ci
-cache:
-  directories:
-    - "$HOME/.npm"
+# install:
+#   - npm ci
+# cache:
+#   directories:
+#     - "$HOME/.npm"
 before-deploy:
   - npm run build
 deploy:
