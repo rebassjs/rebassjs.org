@@ -5,11 +5,15 @@
     "start": "mdx-go src",
     "build": "mdx-go build src -d ."
   },
-  "devDependencies": {
-    "mdx-go": "^1.0.10"
-  },
   "dependencies": {
+    "@rebass/mdx": "^1.0.0",
+    "mdx-go": "^1.0.10",
+    "react-live": "^1.11.0",
     "rebass": "^2.1.0",
+    "repng": "^3.0.2",
+    "rmdi": "^1.0.1",
+    "scrs": "^1.1.0",
+    "sidepane": "^1.0.0-1",
     "styled-components": "^3.4.5",
     "styled-system": "^3.0.2"
   }
