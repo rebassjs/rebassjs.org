@@ -13,7 +13,6 @@ import {
   Pre,
   BlockLink,
   Image,
-  Measure,
   Blockquote,
   Link,
   NavLink,
@@ -132,18 +131,17 @@ const Hero = props => (
 )
 
 const Intro = props =>
+  <Text
+    is='p'
+    fontSize={4}
+    fontWeight='bold'
+    my={5}>
+    Rebass is a library of highly-composable, primitive UI components for React,
+    built with styled-system to make building consistent, responsive web apps simpler and faster.
+  </Text>
+
+const Features = props =>
   <React.Fragment>
-    <Text
-      is='p'
-      fontSize={4}
-      fontWeight='bold'
-      my={5}
-    >
-      <Measure>
-        Rebass is a library of highly-composable, primitive UI components for React,
-        built with styled-system to make building consistent, responsive web apps simpler and faster.
-      </Measure>
-    </Text>
     <Heading>
       Features
     </Heading>
@@ -289,6 +287,7 @@ export default class extends React.Component {
         <Hero />
         <Container maxWidth={1280} pb={6}>
           <Intro />
+          <Features />
           <Demo />
           <CTA />
           <Footer />

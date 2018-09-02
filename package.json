@@ -10,11 +10,11 @@
     "icon": "repng src/Icon.js -w 512 -h 512 -d src -f icon.png"
   },
   "devDependencies": {
-    "repng": "^3.0.2"
+    "repng": "^3.1.0"
   },
   "dependencies": {
     "@rebass/mdx": "^1.0.0",
-    "mdx-go": "^1.0.10",
+    "mdx-go": "^1.0.12",
     "react-live": "^1.11.0",
     "rebass": "^2.1.0",
     "rmdi": "^1.0.1",

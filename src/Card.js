@@ -13,6 +13,10 @@ export default props => (
       width: 1024,
       height: 512
     }}>
-    <Logo static />
+    <Logo
+      static
+      strokeWidth={4}
+      size={512}
+    />
   </div>
 )

@@ -10,7 +10,12 @@ export default props => (
       backgroundColor: 'black',
       width: 512,
       height: 512,
+      borderRadius: 99999
     }}>
-    <Logo static />
+    <Logo
+      static
+      size={512}
+      strokeWidth={6}
+    />
   </div>
 )

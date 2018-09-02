@@ -61,7 +61,7 @@ const Logo = props => {
     cx: 32,
     cy: 32,
     r: 24,
-    strokeWidth: 2,
+    strokeWidth: props.strokeWidth,
     vectorEffect: 'non-scaling-stroke'
   }
 
@@ -110,7 +110,7 @@ const Logo = props => {
         cx={32}
         cy={32}
         r={30}
-        strokeWidth={1}
+        strokeWidth={props.strokeWidth / 2}
         vectorEffect='non-scaling-stroke'
         opacity={1/2}
       />
@@ -121,6 +121,7 @@ const Logo = props => {
 
 Logo.defaultProps = {
   ignore: true,
+  strokeWidth: 2,
   size: 256
 }
 
