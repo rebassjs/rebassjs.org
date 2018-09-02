@@ -9,12 +9,14 @@
     "card": "repng src/Card.js -w 1024 -h 512 -d src -f card.png",
     "icon": "repng src/Icon.js -w 512 -h 512 -d src -f icon.png"
   },
+  "peerDependencies": {
+    "repng": "^3.0.2"
+  },
   "dependencies": {
     "@rebass/mdx": "^1.0.0",
     "mdx-go": "^1.0.10",
     "react-live": "^1.11.0",
     "rebass": "^2.1.0",
-    "repng": "^3.0.2",
     "rmdi": "^1.0.1",
     "scrs": "^1.1.0",
     "sidepane": "^1.0.0-3",

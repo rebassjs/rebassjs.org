@@ -1,12 +1,13 @@
 language: node_js
-node-js:
+node_js:
   - 10
-# install:
-#   - npm ci
+install:
+  - npm i -g npm@6
+  - npm ci
 # cache:
 #   directories:
 #     - "$HOME/.npm"
-before-deploy:
+before_deploy:
   - npm run build
 deploy:
   repo: rebassjs/rebassjs.github.io
