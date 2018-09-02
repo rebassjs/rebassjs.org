@@ -5,7 +5,8 @@
     "start": "mdx-go src",
     "build": "mdx-go build src -d dist",
     "svg": "scrs src/Logo.js --svg > src/logo.svg",
-    "card": "repng src/Card.js -w 1024 -h 512 -d src -f card.png"
+    "card": "repng src/Card.js -w 1024 -h 512 -d src -f card.png",
+    "icon": "repng src/Icon.js -w 512 -h 512 -d src -f icon.png"
   },
   "dependencies": {
     "@rebass/mdx": "^1.0.0",

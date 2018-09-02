@@ -21,6 +21,7 @@ import {
   BlockLink,
   ButtonTransparent,
   Text,
+  Divider,
   theme
 } from 'rebass'
 import { display, color } from 'styled-system'
@@ -46,8 +47,8 @@ export const navigation = [
   { name: 'Theming', href: '/theming' },
   { name: 'Server Side Rendering', href: '/server-side-rendering' },
   { name: 'Colors', href: '/colors' },
-  { name: 'GitHub', href: github },
-  { name: 'Made by Jxnblk', href: 'https://jxnblk.com' },
+  // { name: 'GitHub', href: github },
+  // { name: 'Made by Jxnblk', href: 'https://jxnblk.com' },
 ]
 
 export const NavBar = styled(Flex)({
@@ -85,6 +86,19 @@ export const SideNav = props =>
         children={link.name}
       />
     ))}
+    <Divider />
+    <NavLink
+      width={1}
+      px={4}
+      href={github}
+      children='GitHub'
+    />
+    <NavLink
+      width={1}
+      px={4}
+      href='https://jxnblk.com'
+      children='Made by Jxnblk'
+    />
   </Box>
 
 export const Pagination = props => {
