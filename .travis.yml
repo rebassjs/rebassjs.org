@@ -10,8 +10,8 @@ install:
 before_deploy:
   - npm run build
   - touch dist/.nojekyll
+  - cp CNAME dist
 deploy:
-  repo: rebassjs/rebassjs.github.io
   provider: pages
   skip-cleanup: true
   verbose: true
