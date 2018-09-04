@@ -21,6 +21,7 @@ import Logo from './Logo'
 import { Live, docs, install } from './components'
 import pkg from 'rebass/package.json'
 
+export const name = 'Rebass'
 export { Root } from './components'
 
 const PrimaryButton = styled(Button)({

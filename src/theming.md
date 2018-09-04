@@ -1,4 +1,6 @@
 
+export const name = 'Theming'
+
 # Theming
 
 Rebass's core theme includes breakpoints, a spacing scale,
@@ -75,7 +77,7 @@ const theme = {
 
 Rebass includes a `<DarkMode />` component for inverting the luminance of colors in a theme.
 
-```.jsx
+```jsx
 <Box>
   <Heading mb={3}>Normal Theme</Heading>
   <DarkMode p={3}>

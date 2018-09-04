@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "@rebass/mdx": "^1.0.0",
-    "mdx-go": "^1.0.12",
+    "mdx-go": "^1.1.5",
     "react-live": "^1.11.0",
     "rebass": "^2.1.0",
     "rmdi": "^1.0.1",

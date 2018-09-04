@@ -10,6 +10,8 @@ import {
   colors
 } from 'rebass'
 
+export const name = 'Colors'
+
 /*
 const {
   h1: Title,

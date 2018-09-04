@@ -1,4 +1,6 @@
 
+export const name = 'Grid System'
+
 # Grid System
 
 Rebass includes the incredibly flexible, responsive flexbox grid system [Grid Styled][grid-styled].

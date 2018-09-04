@@ -1,4 +1,6 @@
 
+export const name = 'Getting Started'
+
 # Getting Started
 
 ```sh

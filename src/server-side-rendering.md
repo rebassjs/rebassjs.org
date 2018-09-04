@@ -1,4 +1,6 @@
 
+export const name = 'Server Side Rendering'
+
 # Server Side Rendering
 
 Rebass uses styled-components for styling, which works with server-side rendering.
