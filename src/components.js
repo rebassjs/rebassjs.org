@@ -1,5 +1,4 @@
 import React from 'react'
-import styled from 'styled-components'
 import { width } from 'styled-system'
 import {
   Head,
@@ -10,7 +9,7 @@ import {
   Pagination,
   ScrollTop,
 } from 'mdx-go'
-import * as Rebass from 'rebass'
+import * as Rebass from 'rebass/emotion'
 import {
   Provider,
   Flex,
@@ -25,10 +24,7 @@ import {
   Text,
   Divider,
   theme
-} from 'rebass'
-import { display, color } from 'styled-system'
-import MenuIcon from 'rmdi/lib/Menu'
-import RebassMDX from '@rebass/mdx'
+} from 'rebass/emotion'
 
 export const photo = 'https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=2048&q=20'
 export const docs = '/getting-started'
