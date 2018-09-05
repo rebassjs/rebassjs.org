@@ -70,7 +70,7 @@ export const PageLayout = props =>
         order={componentList}
         filter={route => componentList.includes(route.name)}
       />
-      <Divider />
+      <Divider borderColor='lightgray' />
       <NavLink
         width={1}
         px={3}
