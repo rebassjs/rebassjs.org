@@ -1,7 +1,7 @@
 import React from 'react'
-import styled, { keyframes } from 'styled-components'
+import styled, { keyframes } from 'react-emotion'
 import { size, width, height } from 'styled-system'
-import { theme } from 'rebass'
+import { theme } from 'rebass/emotion'
 
 const Svg = styled(({
   width,
@@ -30,7 +30,7 @@ const fade1 = keyframes`
   100% { stroke: magenta }
 `
 
-const Electron1 = styled.circle`
+const Electron1 = styled('circle')`
   transform-origin: 50% 50%;
   animation-name: ${spin1}, ${fade1};
   animation-duration: 3s, 5s;
@@ -38,7 +38,7 @@ const Electron1 = styled.circle`
   animation-iteration-count: infinite;
 `
 
-const Electron2 = styled.circle`
+const Electron2 = styled('circle')`
   transform-origin: 50% 50%;
   animation-name: ${spin2}, ${fade1};
   animation-duration: 3s, 6s;
@@ -46,12 +46,12 @@ const Electron2 = styled.circle`
   animation-iteration-count: infinite;
 `
 
-const ElectronStatic1 = styled.circle`
+const ElectronStatic1 = styled('circle')`
   transform-origin: 50% 50%;
   transform: rotate3d(0, 1, 1, 90deg);
 `
 
-const ElectronStatic2 = styled.circle`
+const ElectronStatic2 = styled('circle')`
   transform-origin: 50% 50%;
   transform: rotate3d(1, 0, 1, 90deg);
 `

@@ -1,6 +1,9 @@
 import React from 'react'
-import styled from 'styled-components'
-import { Link as GoLink } from 'mdx-go'
+import styled from 'react-emotion'
+import {
+  Link as GoLink,
+  LiveCode
+} from 'mdx-go'
 import {
   Flex,
   Box,
@@ -16,11 +19,12 @@ import {
   Blockquote,
   Link,
   NavLink,
-} from 'rebass'
+} from 'rebass/emotion'
 import Logo from './Logo'
-import { Live, docs, install } from './components'
+import { docs, install } from './components'
 import pkg from 'rebass/package.json'
 
+export const name = 'Rebass'
 export { Root } from './components'
 
 const PrimaryButton = styled(Button)({
@@ -235,7 +239,7 @@ const code = `<Box px={4} py={5} color='white' bg='magenta'>
 const Demo = props =>
   <Box id='demo' py={5}>
     <Heading mb={3}>Live Demo</Heading>
-    <Live code={code} />
+    <LiveCode code={code} />
   </Box>
 
 const CTA = props =>

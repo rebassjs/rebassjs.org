@@ -2,6 +2,7 @@
   "private": true,
   "name": "rebass.github.io",
   "scripts": {
+    "prepare": "./build.js",
     "start": "mdx-go src",
     "test": "echo \"ok\"",
     "build": "mdx-go build src -d dist",
@@ -10,17 +11,18 @@
     "icon": "repng src/Icon.js -w 512 -h 512 -d src -f icon.png"
   },
   "devDependencies": {
-    "repng": "^3.1.0"
+    "repng": "^3.1.0",
+    "system-docs": "^1.0.0-1"
   },
   "dependencies": {
-    "@rebass/mdx": "^1.0.0",
-    "mdx-go": "^1.0.12",
-    "react-live": "^1.11.0",
+    "emotion": "^9.2.8",
+    "emotion-server": "^9.2.8",
+    "emotion-theming": "^9.2.6",
+    "mdx-go": "^1.1.5",
+    "react-emotion": "^9.2.8",
     "rebass": "^2.1.0",
-    "rmdi": "^1.0.1",
     "scrs": "^1.1.0",
-    "sidepane": "^1.0.0-3",
-    "styled-components": "^3.4.5",
-    "styled-system": "^3.0.2"
+    "styled-system": "^3.0.2",
+    "system-components": "^3.0.0"
   }
 }

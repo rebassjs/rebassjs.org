@@ -1,4 +1,6 @@
 
+export const name = 'Extending'
+
 # Extending
 
 Rebass components can be completely customized using styled-components or emotion.

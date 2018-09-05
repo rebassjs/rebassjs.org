@@ -8,7 +8,9 @@ import {
   Code,
   Pre,
   colors
-} from 'rebass'
+} from 'rebass/emotion'
+
+export const name = 'Colors'
 
 /*
 const {
