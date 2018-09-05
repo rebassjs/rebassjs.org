@@ -2,6 +2,7 @@
   "private": true,
   "name": "rebass.github.io",
   "scripts": {
+    "prepare": "./build.js",
     "start": "mdx-go src",
     "test": "echo \"ok\"",
     "build": "mdx-go build src -d dist",
@@ -10,7 +11,8 @@
     "icon": "repng src/Icon.js -w 512 -h 512 -d src -f icon.png"
   },
   "devDependencies": {
-    "repng": "^3.1.0"
+    "repng": "^3.1.0",
+    "system-docs": "^1.0.0-1"
   },
   "dependencies": {
     "emotion": "^9.2.8",

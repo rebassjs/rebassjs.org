@@ -25,6 +25,7 @@ import {
   Divider,
   theme
 } from 'rebass/emotion'
+import componentList from './list'
 
 export const photo = 'https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=2048&q=20'
 export const docs = '/getting-started'
@@ -35,17 +36,6 @@ export const scope = {
   ...Rebass,
   photo
 }
-
-export const navigation = [
-  { name: 'Rebass', href: '/' },
-  { name: 'Getting Started', href: '/getting-started' },
-  { name: 'Props', href: '/props' },
-  { name: 'Grid System', href: '/grid-system' },
-  { name: 'Theming', href: '/theming' },
-  { name: 'Extending', href: '/extending' },
-  { name: 'Server Side Rendering', href: '/server-side-rendering' },
-  { name: 'Colors', href: '/colors' },
-]
 
 const nav = [
   'Rebass',
@@ -58,15 +48,27 @@ const nav = [
   'Colors',
 ]
 
+const pagination = [
+  ...nav,
+  ...componentList
+]
+
 export const PageLayout = props =>
   <Layout>
     <Layout.MenuToggle m={3} />
     <Layout.Sidebar>
       <NavLinks
         {...props}
-        py={2}
+        py={1}
         order={nav}
         filter={route => nav.includes(route.name)}
+      />
+      <Divider />
+      <NavLinks
+        {...props}
+        py={1}
+        order={componentList}
+        filter={route => componentList.includes(route.name)}
       />
       <Divider />
       <NavLink
@@ -86,8 +88,8 @@ export const PageLayout = props =>
       {props.children}
       <Pagination
         {...props}
-        order={nav}
-        filter={route => nav.includes(route.name)}
+        order={pagination}
+        filter={route => pagination.includes(route.name)}
       />
     </Layout.Main>
   </Layout>

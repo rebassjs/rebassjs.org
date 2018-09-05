@@ -3,19 +3,20 @@
 const fs = require('fs')
 const path = require('path')
 const systemDocs = require('system-docs')
-const Rebass = require('../dist')
+const Rebass = require('rebass/emotion')
 
-const filename = path.join(__dirname, 'components/list.md')
+const filename = path.join(__dirname, 'src/components/list.md')
 
 const keys = Object.keys(Rebass)
 
 const examples = fs.readdirSync(
-  path.join(__dirname, '../examples/jsx')
+  path.join(__dirname, './examples')
 )
   .reduce((a, b) => Object.assign({}, a, {
-    [path.basename(b, path.extname(b))]: path.join(__dirname, '../examples/jsx', b)
+    [path.basename(b, path.extname(b))]: path.join(__dirname, './examples', b)
   }), {})
 
+/*
 const template = ({
   components = []
 }) => `
@@ -44,6 +45,7 @@ ${props.map(prop => (
 )).join('\n')}
 `)).join('\n')}
 `.replace(/\n\n+/g, '\n\n')
+*/
 
 const propBlacklist = {
   m: true,
@@ -108,13 +110,14 @@ const components = keys
   })
   .filter(c => typeof c.Component === 'function')
 
-const content = template({ components })
+// const content = template({ components })
 
-fs.writeFileSync(filename, content)
+// fs.writeFileSync(filename, content)
 
 const createPropsTable = docs => {
   const { propTypes = {}, defaultProps = {} } = docs
   const keys = Object.keys(propTypes)
+    .filter(key => !propBlacklist[key])
   if (!keys.length) return ''
   const cols = [
     'prop',
@@ -165,8 +168,17 @@ Object.keys(examples).forEach(name => {
   ]
     .filter(Boolean)
     .join('\n\n')
-  const file = path.join(__dirname, 'components', name + '.md')
+  const file = path.join(__dirname, 'src/components', name + '.md')
   fs.writeFileSync(file, content)
 })
 
-console.log('Generated docs/components/list.md')
+// build component list module
+{
+  const filename = path.join(__dirname, 'src/list.js')
+  const content = `export default [
+  ${Object.keys(examples).map(name => `'${name}'`).join(',\n  ')}
+]`
+  fs.writeFileSync(filename, content)
+}
+
+console.log('Generated component docs')
