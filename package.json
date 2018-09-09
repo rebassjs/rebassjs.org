@@ -2,8 +2,8 @@
   "private": true,
   "name": "rebass.github.io",
   "scripts": {
-    "prepare": "./build.js",
-    "start": "mdx-go src",
+    "_start": "mdx-go src -p 3000",
+    "start": "webpack-serve",
     "test": "echo \"ok\"",
     "build": "mdx-go build src -d dist",
     "svg": "scrs src/Logo.js --svg > src/logo.svg",
@@ -12,7 +12,9 @@
   },
   "devDependencies": {
     "repng": "^3.1.0",
-    "system-docs": "^1.0.0-1"
+    "system-docs": "^1.0.0-1",
+    "webpack-command": "^0.4.1",
+    "webpack-serve": "^2.0.2"
   },
   "dependencies": {
     "emotion": "^9.2.8",
@@ -20,8 +22,9 @@
     "emotion-theming": "^9.2.6",
     "mdx-go": "^1.1.5",
     "react-emotion": "^9.2.8",
-    "rebass": "^2.3.2",
+    "rebass": "^3.0.0-0",
     "scrs": "^1.1.0",
+    "styled-components": "^4.0.0-beta.1",
     "styled-system": "^3.0.2",
     "system-components": "^3.0.0"
   }

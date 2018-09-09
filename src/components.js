@@ -6,26 +6,14 @@ import {
   StyleProvider,
   Layout,
   NavLinks,
+  NavLink,
   Pagination,
   ScrollTop,
-} from 'mdx-go'
-import * as Rebass from 'rebass/emotion'
+} from 'mdx-go/styled-components'
+import * as Rebass from 'rebass'
 import {
-  Provider,
-  Flex,
   Box,
-  Border,
-  Relative,
-  Absolute,
-  Container,
-  NavLink,
-  BlockLink,
-  ButtonTransparent,
-  Text,
-  Divider,
-  theme
-} from 'rebass/emotion'
-import componentList from './list'
+} from 'rebass'
 
 export const photo = 'https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=2048&q=20'
 export const docs = '/getting-started'
@@ -42,16 +30,22 @@ const nav = [
   'Getting Started',
   'Props',
   'Grid System',
-  'Theming',
   'Extending',
-  'Server Side Rendering',
-  'Colors',
 ]
 
 const pagination = [
   ...nav,
-  ...componentList
 ]
+
+export const Container = props =>
+  <Box
+    {...props}
+    px={4}
+    mx='auto'
+    css={{
+      maxWidth: '1024px'
+    }}
+  />
 
 export const PageLayout = props =>
   <Layout>
@@ -63,14 +57,6 @@ export const PageLayout = props =>
         order={nav}
         filter={route => nav.includes(route.name)}
       />
-      <Divider borderColor='lightgray' />
-      <NavLinks
-        {...props}
-        py={1}
-        order={componentList}
-        filter={route => componentList.includes(route.name)}
-      />
-      <Divider borderColor='lightgray' />
       <NavLink
         width={1}
         px={3}
@@ -111,13 +97,11 @@ export const Root = props => {
         <meta name='twitter:image' content='https://rebassjs.org/card.png' />
         <link rel='stylesheet' href='//fonts.googleapis.com/css?family=Roboto+Mono' />
       </Head>
-      <Provider>
-        <StyleProvider components={scope}>
-          <Layout {...props}>
-            {props.children}
-          </Layout>
-        </StyleProvider>
-      </Provider>
+      <StyleProvider components={scope}>
+        <Layout {...props}>
+          {props.children}
+        </Layout>
+      </StyleProvider>
       <ScrollTop {...props} />
       {ga}
     </React.Fragment>
