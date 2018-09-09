@@ -5,11 +5,38 @@ export const name = 'Props'
 
 ## Styled System
 
-Rebass components use [styled-system][system] for responsive, theme-based style props.
+Rebass components use [styled-system][] for responsive, theme-based style props.
+
+## Colors
+
+All Rebass components use [styled-system][]'s [color][] function to add the `color` and `bg` props.
+The `color` and `bg` props make using colors from the color palette simple to help promote design consistency.
+
+The color values can be defined in the `theme.colors` object.
+
+```.jsx
+<Box color='white' bg='fuchsia' p={3}>
+  Hello
+</Box>
+```
+
+```jsx
+// Keys reference values in the color palette object
+<Text color='blue' />
+
+// Background color can be set with the `bg` prop
+<Button bg='red' />
+
+// Values that do not map to a key in `theme.colors` can be used
+<Button bg='tomato' />
+
+// Arrays can be used to change colors responsively
+<Text color={[ 'blue', 'green' ]} />
+```
 
 ## Margin and Padding
 
-All Rebass component use the [space][space] utility from [styled-system][system] to handle responsive margin and padding props based on a global spacing scale (`theme.space`).
+All Rebass component use the [space][] utility from [styled-system][] to handle responsive margin and padding props based on a global spacing scale (`theme.space`).
 The margin and padding props help promote consistency in layout
 without the need to add custom margin and padding declarations throughout an application.
 The margin and padding props use a shorthand syntax, similar to other OOCSS approaches and many CSS libraries.
@@ -58,36 +85,13 @@ The margin and padding props use a shorthand syntax, similar to other OOCSS appr
 <Text m={[ 0, 1, 2 ]} />
 ```
 
-## Colors
+## Font Size
 
-All Rebass components use [styled-system's][system] [color][color] function to add the `color` and `bg` props.
-The `color` and `bg` props make using colors from the color palette simple to help promote design consistency.
-
-The color values can be defined in the `theme.colors` object.
-
-```.jsx
-<Box color='white' bg='fuchsia' p={3}>
-  Hello
-</Box>
-```
-
-```jsx
-// Keys reference values in the color palette object
-<Text color='blue' />
-
-// Background color can be set with the `bg` prop
-<Button bg='red' />
-
-// Values that do not map to a key in `theme.colors` can be used
-<Button bg='tomato' />
-
-// Arrays can be used to change colors responsively
-<Text color={[ 'blue', 'green' ]} />
-```
+## Width
 
 ## Responsive Styles
 
-Many Rebass props accept arrays as values to set mobile-first responsive styles.
+All Rebass props accept arrays as values to set mobile-first responsive styles.
 The first value is not scoped to a media query and applies to all breakpoints.
 Each value after the first corresponds to a media query derived from `theme.breakpoints`.
 
@@ -125,7 +129,7 @@ See the [styled-system][responsive] docs for more info.
 
 ## `css` prop
 
-All Rebass components include [system-components][]’ `css` prop,
+All Rebass components include a `css` prop,
 which gives you low-level access to apply any CSS to a component.
 This works well as an escape hatch for one-off styles or as another way to extend Rebass components.
 
@@ -143,31 +147,20 @@ const GrowingButton = props =>
   />
 ```
 
-## HTML Element Prop
-
-Each component accepts an `is` prop to change the underlying HTML element on a per-instance basis.
-This is useful for ensuring semantic markup, while keeping styles decoupled.
-
-```.jsx
-<Heading
-  is='h1'
-  children='Top-level heading'
-/>
-```
-
-```.jsx
-<Button
-  is='a'
-  href='#!'
-  children='Link Button'
-/>
-```
-
 ## Component-Specific Props
 
-Refer to the [component documentation](components.md) for information on component-specific props.
+Refer to each component's docs for addition props:
 
-[system]: https://github.com/jxnblk/styled-system
+- [Box](/Box)
+- [Flex](/Flex)
+- [Text](/Text)
+- [Heading](/Heading)
+- [Button](/Button)
+- [Link](/Link)
+- [Image](/Image)
+- [Card](/Card)
+
+[styled-system]: https://github.com/jxnblk/styled-system
 [space]: https://github.com/jxnblk/styled-system/blob/master/docs/api.md#space-responsive
 [color]: https://github.com/jxnblk/styled-system/blob/master/docs/api.md#color-responsive
 [responsive]: https://github.com/jxnblk/styled-system/blob/master/docs/responsive-styles.md

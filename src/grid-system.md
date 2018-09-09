@@ -1,5 +1,5 @@
 
-export const name = 'Grid System'
+**NOTE:** this doc may be out of date
 
 # Grid System
 

@@ -1,73 +1,104 @@
 
-export const name = 'Getting Started'
-
-# Getting Started
+## Getting Started
 
 ```sh
-npm i rebass
+npm i rebass@next
 ```
 
-## Provider
-
-To ensure Rebass's theme is properly configured, use the `<Provider />` component at the root of your application.
-The `Provider` component accepts a `theme` props for setting a [custom theme][theming].
-
-```.jsx
-<Provider>
-  <Heading>Hello</Heading>
-</Provider>
-```
-
-You might also want to set some global styles in your application.
-The [grid-styled][grid-styled] `Box` and `Flex` components depend on setting `box-sizing: border-box` to work as expected.
-
-```jsx
-import { injectGlobal } from 'styled-components'
-
-injectGlobal`
-  * { box-sizing: border-box; }
-  body { margin: 0; }
-`
-```
-
-Import UI components directly from Rebass and use them to build larger components.
+Import components directly from Rebass and use them to build out your UI.
 
 ```js
 import {
-  Card,
   Box,
-  BackgroundImage,
-  Subhead,
-  Small
+  Card,
+  Image,
+  Heading,
+  Text
 } from 'rebass'
 ```
 
 ```.jsx
 <Box width={256}>
-  <Card>
-    <BackgroundImage src={photo} />
-    <Box p={2}>
-      <Subhead>Card</Subhead>
-      <Small>Small meta text</Small>
+  <Card
+    p={1}
+    borderRadius={2}
+    boxShadow='0 0 16px rgba(0, 0, 0, .25)'>
+    <Image src={photo} />
+    <Box px={2}>
+      <Heading as='h3'>
+        Card
+      </Heading>
+      <Text fontSize={0}>
+        Small meta text
+      </Text>
     </Box>
   </Card>
 </Box>
 ```
 
-Alternatively, use Rebass components as the starting point for custom UI components.
+### Props
+
+Rebass components use [styled-system][] for responsive, theme-based style props.
+
+Read more about [Rebass props](/props).
+
+### Extending
+
+Rebass components are also a great starting point for extending into custom UI components
 
 ```jsx
 import styled from 'styled-components'
 import { Button as Base } from 'rebass'
 
-const Button = styled(Base)`
+export const Button = styled(Base)`
+  border-radius: 9999px;
   &:hover {
     background-color: ${props => props.theme.colors.navy};
   }
 `
-
-export default Button
 ```
 
-[theming]: theming.md
-[grid-styled]: https://github.com/jxnblk/grid-styled
+Read more about [Extending Rebass components](/extending).
+
+### Theming
+
+Use a ThemeProvider component to completely customize the look and feel of Rebass components,
+from fonts, font sizes, and colors to button variants and card styles.
+
+```jsx
+import React from 'react'
+import { ThemeProvider } from 'styled-components'
+
+const blue = '#07c'
+const lightgray = '#f6f6ff'
+
+const theme = {
+  fontSizes: [
+    12, 14, 16, 24, 32, 48, 64
+  ],
+  colors: {
+    blue,
+    lightgray,
+  },
+  buttons: {
+    primary: {
+      color: '#fff',
+      backgroundColor: blue,
+    },
+    outline: {
+      color: blue,
+      backgroundColor: 'transparent',
+      boxShadow: 'inset 0 0 2px'
+    },
+  },
+}
+
+export default props =>
+  <ThemeProvider theme={theme}>
+    {props.children}
+  </ThemeProvider>
+```
+
+Read more about [Theming Rebass components](/theming).
+
+[styled-system]: https://github.com/jxnblk/styled-system

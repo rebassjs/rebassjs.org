@@ -13,6 +13,7 @@ import {
 import * as Rebass from 'rebass'
 import {
   Box,
+  Text,
 } from 'rebass'
 
 export const photo = 'https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=2048&q=20'
@@ -25,16 +26,44 @@ export const scope = {
   photo
 }
 
+const theme = {
+  colors: {
+    blue: '#07c',
+    lightgray: '#f6f6ff',
+  },
+  buttons: {
+    primary: {
+      color: 'black',
+      backgroundColor: 'magenta',
+    },
+    outline: {
+      color: 'magenta',
+      backgroundColor: 'transparent',
+      boxShadow: 'inset 0 0 0 2px',
+    }
+  },
+  cards: {
+    basic: {
+      boxShadow: ''
+    }
+  }
+}
+
 const nav = [
   'Rebass',
-  'Getting Started',
+  // 'Getting Started',
   'Props',
-  'Grid System',
   'Extending',
-]
-
-const pagination = [
-  ...nav,
+  'Theming',
+  'Box',
+  'Flex',
+  'Text',
+  'Heading',
+  'Button',
+  'Link',
+  'Image',
+  'Card',
+  'Advanced',
 ]
 
 export const Container = props =>
@@ -44,6 +73,14 @@ export const Container = props =>
     mx='auto'
     css={{
       maxWidth: '1024px'
+    }}
+  />
+
+export const Pre = props =>
+  <Text
+    {...props}
+    css={{
+      fontFamily: 'Menlo, monospace'
     }}
   />
 
@@ -59,6 +96,7 @@ export const PageLayout = props =>
       />
       <NavLink
         width={1}
+        mt={4}
         px={3}
         href={github}
         children='GitHub'
@@ -74,14 +112,14 @@ export const PageLayout = props =>
       {props.children}
       <Pagination
         {...props}
-        order={pagination}
-        filter={route => pagination.includes(route.name)}
+        order={nav}
+        filter={route => nav.includes(route.name)}
       />
     </Layout.Main>
   </Layout>
 
 export const Root = props => {
-  const Layout = props.location.pathname === '/'
+  const Layout = [ '/', '/home' ].includes(props.location.pathname)
     ? props => props.children
     : PageLayout
 
@@ -97,7 +135,9 @@ export const Root = props => {
         <meta name='twitter:image' content='https://rebassjs.org/card.png' />
         <link rel='stylesheet' href='//fonts.googleapis.com/css?family=Roboto+Mono' />
       </Head>
-      <StyleProvider components={scope}>
+      <StyleProvider
+        theme={theme}
+        components={scope}>
         <Layout {...props}>
           {props.children}
         </Layout>
@@ -117,3 +157,54 @@ const ga = (
   />
 )
 
+export const features = [
+  '8 foundational UI components',
+  'Super small (~1KB)',
+  'Responsive, themeable style props',
+  'Flexbox grid with the Box and Flex components',
+  'Support for styled-components & emotion',
+  'Extensible base components',
+  'Design-system based consistency',
+  'Built for responsive web design',
+]
+
+export const quotes = [
+  {
+    text: '“One of the best React component libs out there”',
+    name: 'Max Stoiber',
+    href: 'https://twitter.com/mxstbr/status/882657561111080960'
+  },
+  {
+    text: '“Rebass is the Bootstrap of React.”',
+    name: 'Jori Lallo',
+    href: 'https://twitter.com/jorilallo/status/882990343225868289'
+  },
+  {
+    text: '“A whopper component library built on styled-components. Responsive, systematic, scalable...the business!”',
+    name: 'Colm Tuite',
+    href: 'https://twitter.com/colmtuite/status/882715087936606210'
+  },
+  {
+    text: '“Why the hell are we now putting CSS in Javascript? I’m losing my mind with web developers trying to control everything in the world with client-side javascript. What a mess.”',
+    name: 'alttab',
+    href: 'https://news.ycombinator.com/item?id=14705579'
+  }
+]
+
+export const demo = `<Flex
+  px={4}
+  py={5}
+  alignItems='center'>
+  <Heading
+    fontSize={[ 4, 5 ]}
+    color='blue'>
+    Live Demo
+  </Heading>
+  <Box mx='auto' />
+  <Button>
+    Beep
+  </Button>
+  <Button ml={2}>
+    Boop
+  </Button>
+</Flex>`
