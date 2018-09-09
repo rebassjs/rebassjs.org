@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import {
   Link as GoLink,
+  NavLink,
   LiveCode
 } from 'mdx-go/styled-components'
 import {
@@ -25,7 +26,6 @@ import {
   demo,
 } from './components'
 import pkg from 'rebass/package.json'
-import GettingStarted from './getting-started.md'
 
 export const name = 'Rebass'
 export { Root } from './components'
@@ -53,57 +53,6 @@ const badges = (
       />
     </Link>
   </Flex>
-)
-
-const alt = (
-    <Flex
-      flexDirection='column'
-      alignItems='center'
-      px={3}
-      py={[ 4, 5 ]}
-      color='white'
-      bg='black'
-      css={{
-        WebkitFontSmoothing: 'antialiased'
-      }}>
-      <Logo
-        text
-        size={[ 256, null, null, 320 ]}
-      />
-      <Text
-        mt={3}
-        mb={3}
-        fontSize={3}
-        textAlign='center'
-        fontWeight='bold'>
-        React primitive UI components built with styled-system
-        {false && pkg.description}
-      </Text>
-      <Flex
-        mb={4}
-        width={1}
-        flexWrap='wrap'
-        alignItems='center'>
-        <Box mx='auto' />
-        <Button
-          as={GoLink}
-          href={docs}
-          variant='primary'
-          children='Docs'
-        />
-        <Box mx={2} />
-        <Button
-          as='a'
-          href='https://github.com/rebassjs/rebass'
-          color='black'
-          children='GitHub'
-          variant='outline'
-        />
-        <Pre color='magenta' mx={3} my={3}>{install}</Pre>
-        <Box mx='auto' />
-      </Flex>
-      <Pre mb={2} fontSize={1}>v{pkg.version}</Pre>
-    </Flex>
 )
 
 export default props =>
@@ -141,7 +90,6 @@ export default props =>
           <Button
             as='a'
             href='https://github.com/rebassjs/rebass'
-            color='black'
             children='GitHub'
             variant='outline'
           />
@@ -172,7 +120,7 @@ export default props =>
             key={name}
             width={[ 1, null, 1/2 ]}
             px={3}
-            my={4}>
+            my={3}>
             <Text
               mb={2}
               fontSize={3}
@@ -183,22 +131,33 @@ export default props =>
           </Box>
         ))}
       </Flex>
-      {false && (
-      <Box id='demo' py={5}>
+      <Box id='demo' py={4}>
         <LiveCode code={demo} />
       </Box>
-      )}
       <Box py={5}>
-        <GettingStarted />
+        <Heading mb={3} fontSize={5}>Get Started</Heading>
+        <Button
+          as={GoLink}
+          href={docs}
+          py={3}
+          variant='primary'>
+          Read the Docs
+        </Button>
       </Box>
     </Container>
-    <Box py={5} bg='lightgray'>
+    <Box as='footer' py={5} bg='lightgray'>
       <Container>
-        <Flex>
-          <Link href={github}>GitHub</Link>
-          <Link href='https://jxnblk.com'>Made by Jxnblk</Link>
-          <Link href='https://github.com/rebassjs/grid'>Rebass Grid</Link>
-          <Link href='https://github.com/jxnblk/styled-system'>Styled System</Link>
+        <Flex mx={-3} flexWrap='wrap'>
+          <Box width={[ 1/2, null, 1/4 ]}>
+            <NavLink href={docs}>Docs</NavLink>
+            <NavLink href={github}>GitHub</NavLink>
+            <NavLink href='https://rebass-v2.now.sh'>v2 Docs</NavLink>
+          </Box>
+          <Box width={[ 1/2, null, 1/4 ]}>
+            <NavLink href='https://github.com/rebassjs/grid'>Rebass Grid</NavLink>
+            <NavLink href='https://github.com/jxnblk/styled-system'>Styled System</NavLink>
+            <NavLink href='https://jxnblk.com'>Made by Jxnblk</NavLink>
+          </Box>
         </Flex>
       </Container>
     </Box>

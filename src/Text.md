@@ -15,4 +15,11 @@ Extends [Box](/Box).
 
 ## Props
 
-- ``
+In addition to the base [Box](/Box) props,
+Text includes the following style props:
+
+- `fontFamily`
+- `fontWeight`
+- `textAlign`
+- `lineHeight`
+- `letterSpacing`

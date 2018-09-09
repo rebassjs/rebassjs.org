@@ -11,4 +11,11 @@ Image with max-width and style props. Extends [Box](/Box)
 />
 ```
 
+## Props
+
+In addition to the base [Box](/Box) props, Image includes the following style props.
+
+- `height`
+- `borderRadius`
+
 

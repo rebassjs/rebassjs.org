@@ -38,13 +38,13 @@ import {
 </Box>
 ```
 
-### Props
+## Props
 
 Rebass components use [styled-system][] for responsive, theme-based style props.
 
 Read more about [Rebass props](/props).
 
-### Extending
+## Extending
 
 Rebass components are also a great starting point for extending into custom UI components
 
@@ -62,7 +62,7 @@ export const Button = styled(Base)`
 
 Read more about [Extending Rebass components](/extending).
 
-### Theming
+## Theming
 
 Use a ThemeProvider component to completely customize the look and feel of Rebass components,
 from fonts, font sizes, and colors to button variants and card styles.

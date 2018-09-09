@@ -7,3 +7,6 @@ Basic styled link. Extends [Box](/Box).
 <Link href='https://rebassjs.org'>Link</Link>
 ```
 
+## Props
+
+Link includes the props from the base [Box](/Box) component.

@@ -28,7 +28,7 @@ export const scope = {
 
 const theme = {
   colors: {
-    blue: '#07c',
+    blue: '#33e',
     lightgray: '#f6f6ff',
   },
   buttons: {
@@ -46,6 +46,15 @@ const theme = {
     basic: {
       boxShadow: ''
     }
+  },
+  LiveEditor: {
+    color: '#c0c'
+  },
+  pre: {
+    color: '#c0c'
+  },
+  code: {
+    color: '#c0c'
   }
 }
 
@@ -64,6 +73,7 @@ const nav = [
   'Image',
   'Card',
   'Advanced',
+  'Examples',
 ]
 
 export const Container = props =>
@@ -193,7 +203,7 @@ export const quotes = [
 
 export const demo = `<Flex
   px={4}
-  py={5}
+  py={4}
   alignItems='center'>
   <Heading
     fontSize={[ 4, 5 ]}

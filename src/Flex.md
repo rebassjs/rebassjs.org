@@ -1,8 +1,7 @@
 
 # Flex
 
-Responsive flexbox layout component.
-Extends: [Box](/Box).
+Responsive flexbox layout component. Extends: [Box](/Box).
 
 ```.jsx
 <Flex>
@@ -23,3 +22,11 @@ Extends: [Box](/Box).
 </Flex>
 ```
 
+## Props
+
+In addition to the base [Box](/Box) props.
+
+- `flexWrap`
+- `flexDirection`
+- `alignItems`
+- `justifyContent`

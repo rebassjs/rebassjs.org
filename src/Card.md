@@ -18,3 +18,15 @@ Layout component with additional style props. Extends [Box](/Box).
 </Card>
 ```
 
+## Props
+
+- `border`
+- `borderColor`
+- `borderRadius`
+- `boxShadow`
+- `backgroundImage`
+- `backgroundSize`
+- `backgroundPosition`
+- `backgroundRepeat`
+- `opacity`
+- `variant`: card style [variant](/theming/#button--card-variants)
