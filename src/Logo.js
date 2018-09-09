@@ -1,7 +1,7 @@
 import React from 'react'
-import styled, { keyframes } from 'react-emotion'
-import { size, width, height } from 'styled-system'
-import { theme } from 'rebass/emotion'
+import styled, { keyframes } from 'styled-components'
+import { width, height } from 'styled-system'
+import { theme } from 'rebass'
 
 const Svg = styled(({
   width,
@@ -12,15 +12,14 @@ const Svg = styled(({
   ${width}
   ${height}
 `
-// mix-blend-mode: screen;
 
 const spin1 = keyframes`
-  50% { transform: rotate3d(0, 1, 1, 180deg) }
-  100% { transform: rotate3d(0, 1, 1, 360deg) }
+  50% { transform: rotate3d(0, 2, 1, 180deg) }
+  100% { transform: rotate3d(0, 2, 1, 360deg) }
 `
 const spin2 = keyframes`
-  50% { transform: rotate3d(1, 0, 1, 180deg) }
-  100% { transform: rotate3d(1, 0, 1, 360deg) }
+  50% { transform: rotate3d(2, 0, 1, 180deg) }
+  100% { transform: rotate3d(2, 0, 1, 360deg) }
 `
 
 const fade1 = keyframes`
@@ -30,10 +29,14 @@ const fade1 = keyframes`
   100% { stroke: magenta }
 `
 
+const a = '4s'
+const b = '7s'
+const c = '8s'
+
 const Electron1 = styled('circle')`
   transform-origin: 50% 50%;
   animation-name: ${spin1}, ${fade1};
-  animation-duration: 3s, 5s;
+  animation-duration: ${a}, ${b};
   animation-timing-function: linear;
   animation-iteration-count: infinite;
 `
@@ -41,19 +44,19 @@ const Electron1 = styled('circle')`
 const Electron2 = styled('circle')`
   transform-origin: 50% 50%;
   animation-name: ${spin2}, ${fade1};
-  animation-duration: 3s, 6s;
+  animation-duration: ${a}, ${c};
   animation-timing-function: linear;
   animation-iteration-count: infinite;
 `
 
 const ElectronStatic1 = styled('circle')`
   transform-origin: 50% 50%;
-  transform: rotate3d(0, 1, 1, 90deg);
+  transform: rotate3d(0, 2, 1, 190deg);
 `
 
 const ElectronStatic2 = styled('circle')`
   transform-origin: 50% 50%;
-  transform: rotate3d(1, 0, 1, 90deg);
+  transform: rotate3d(2, 0, 1, 190deg);
 `
 
 const Logo = props => {
@@ -68,22 +71,8 @@ const Logo = props => {
   const electrons = props.static
     ? (
       <g>
-        <ElectronStatic1
-          {...electronProps}
-          stroke='magenta'
-          style={{
-            transformOrigin: '50% 50%',
-            transform: 'rotate3d(0, 1, 1, 90deg)'
-          }}
-        />
-        <ElectronStatic2
-          {...electronProps}
-          stroke='magenta'
-          style={{
-            transformOrigin: '50% 50%',
-            transform: 'rotate3d(1, 0, 1, 90deg)'
-          }}
-        />
+        <ElectronStatic1 {...electronProps} stroke='#f90' />
+        <ElectronStatic2 {...electronProps} stroke='magenta' />
       </g>
     )
     : (
@@ -100,7 +89,7 @@ const Logo = props => {
         maxWidth: '100%',
         margin: 0,
         fill: 'none',
-        stroke: 'cyan'
+        stroke: 'cyan',
       }}
       vectorEffect='non-scaling-stroke'
       width={props.size}
@@ -115,6 +104,39 @@ const Logo = props => {
         opacity={1/2}
       />
       {electrons}
+      {props.initial && (
+        <text
+          x={32}
+          y={40}
+          textAnchor='middle'
+          fontFamily='inherit'
+          fontWeight='bold'
+          fontSize='24'
+          stroke='none'
+          fill='white'
+          style={{
+            // textTransform: 'uppercase',
+          }}>
+          R
+        </text>
+      )}
+      {props.text && (
+        <text
+          x={32}
+          y={34}
+          textAnchor='middle'
+          fontFamily='inherit'
+          fontWeight='bold'
+          fontSize='4'
+          stroke='none'
+          fill='white'
+          style={{
+            textTransform: 'uppercase',
+            letterSpacing: '0.5em'
+          }}>
+          Rebass
+        </text>
+      )}
     </Svg>
   )
 }

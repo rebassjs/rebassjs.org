@@ -1,10 +1,8 @@
 
-**NOTE:** this doc may be out of date
+export const name = 'Examples'
 
-# Grid System
+# Examples
 
-Rebass includes the incredibly flexible, responsive flexbox grid system [Rebass Grid][rebass-grid].
-Use the `<Flex />` and `<Box />` components to fine tune spacing and alignment in a variety of combination.
 
 ```.jsx
 <Flex mx={-2}>
@@ -88,6 +86,3 @@ Use the `<Flex />` and `<Box />` components to fine tune spacing and alignment i
 </Flex>
 ```
 
-See the [Rebass Grid documentation][rebass-grid] for more.
-
-[rebass-grid]: https://github.com/rebassjs/grid

@@ -3,95 +3,109 @@ export const name = 'Theming'
 
 # Theming
 
-Rebass's core theme includes breakpoints, a spacing scale,
-a typographic scale, fonts, font weights, border radii, and colors, all of which can be configured with the `<Provider />` component.
+To apply themes to Rebass components, add a [ThemeProvider][] component to the root of your application and pass a `theme` object as a prop.
 
-To customize the underlying theme, pass a `theme` object to the `<Provider />` component.
+```jsx
+import React from 'react'
+import { ThemeProvider } from 'styled-components'
+import theme from './theme'
 
-```.jsx
-<Provider
-  theme={{
-    fonts: {
-      sans: '"Avenir Next", Helvetica, sans-serif',
-    },
-    fontSizes: [
-      12, 16, 24, 36, 48, 72
-    ]
-  }}>
-  <Heading fontSize={[ 2, 3, 4, 5 ]}>
-    Hello
-  </Heading>
-</Provider>
+export default props =>
+  <ThemeProvider theme={theme}>
+    {props.children}
+  </ThemeProvider>
 ```
 
-The theme object has the following shape. Any custom values passed to the Provider component will be merged with the defaults.
+An example theme could look like the following:
 
 ```js
-// Default values
-const theme = {
-  breakpoints: [
-    32,
-    48,
-    64,
-    80
+// example theme.js
+
+export default {
+  fontSizes: [
+    12, 14, 16, 20, 24, 32, 48, 64
   ],
+  colors: {
+    blue: '#07c',
+    lightgray: '#f6f6ff'
+  },
   space: [
-    0,
-    4,
-    8,
-    16,
-    32,
-    64,
-    128,
+    0, 4, 8, 16, 32, 64, 128, 256
   ],
   fonts: {
     sans: 'system-ui, sans-serif',
     mono: 'Menlo, monospace',
   },
-  fontSizes: [
-    12,
-    14,
-    16,
-    20,
-    24,
-    32,
-    48,
-    64,
-    72,
-    96
-  ],
-  fontWeights: {
-    normal: 400,
-    bold: 700
-  },
-  colors: {
-    black: '#000',
-    white: '#fff',
-    ...etc
-  },
-  radii: [ 0, 2, 4 ]
+  shadows: {
+    small: '0 0 4px rgba(0, 0, 0, .125)',
+    large: '0 0 24px rgba(0, 0, 0, .125)'
+  }
 }
 ```
 
-## DarkMode
+## Theme Object
 
-Rebass includes a `<DarkMode />` component for inverting the luminance of colors in a theme.
+Rebass and [styled-system][] allow global font sizes, colors, spacing, button variants, and other values to be set with a theme object.
 
-```jsx
-<Box>
-  <Heading mb={3}>Normal Theme</Heading>
-  <DarkMode p={3}>
-    <Heading>Dark Mode</Heading>
-    <Box mb={3}>
-      <Label htmlFor='hi'>Hi</Label>
-      <Input id='hi' defaultValue='Hello' />
-    </Box>
-    <Button mr={3}>Beep</Button>
-    <ButtonOutline>Boop</ButtonOutline>
-  </DarkMode>
-</Box>
+The following keys will be picked up by styled-system props:
+
+Key | Type | Description
+---|---|---
+`fontSizes` | Array | Array of numbers to use as a typographic scale
+`colors` | Object | Color names that can be used in `color`, `bg`, and `borderColor` props
+`space` | Array | Array of numbers for use as margin and pixel values
+`fonts` | Array or Object | Values for the `fontFamily` prop
+`fontWeights` | Array or Object | Values for `fontWeight` prop
+`lineHeights` | Array or Object | Values for `lineHeight` prop
+`letterSpacings` | Array or Object | Values for `letterSpacing` prop
+`shadows` | Array or Object | Values for `boxShadow` prop
+`borders` | Array or Object | Values for `border` props
+`radii` | Array or Object | Values for `borderRadius` props
+`opacity` | Array or Object | Values for `opacity` props
+
+Additionally, each Rebass component can be themed with
+CSS objects and added to the theme with a key corresponding to its name.
+
+```js
+// example theme
+const theme = {
+  Heading: {
+    fontFamily: '"Roboto Condensed", sans-serif',
+    lineHeight: 1.25
+  }
+}
 ```
 
-See the [styled-system][system] docs for more about how Rebass style props integrate with the theme.
+## Button & Card Variants
 
-[system]: https://github.com/jxnblk/styled-system
+The Button and Card components accept a `variant` prop to pick up predefined styles in the theme.
+
+```js
+// example theme.js
+const blue = '#07c'
+
+export default {
+  buttons: {
+    primary: {
+      color: '#fff',
+      backgroundColor: blue,
+    },
+    outline: {
+      color: blue,
+      backgroundColor: 'transparent',
+      boxShadow: 'inset 0 0 0 2px'
+    }
+  }
+}
+```
+
+With the above `buttons` object, the Button component can apply styles based on the `variant` prop.
+
+```jsx
+<Button variant='primary' />
+<Button variant='outline' />
+```
+
+
+[ThemeProvider]: https://www.styled-components.com/docs/advanced#theming
+[styled-system]: https://github.com/jxnblk/styled-system

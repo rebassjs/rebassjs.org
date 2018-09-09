@@ -1,310 +1,164 @@
 import React from 'react'
-import styled from 'react-emotion'
+import styled from 'styled-components'
 import {
   Link as GoLink,
+  NavLink,
   LiveCode
-} from 'mdx-go'
+} from 'mdx-go/styled-components'
 import {
   Flex,
   Box,
-  Container,
-  Banner,
   Heading,
   Text,
-  Lead,
   Button,
-  Pre,
-  BlockLink,
   Image,
-  Blockquote,
   Link,
-  NavLink,
-} from 'rebass/emotion'
+} from 'rebass'
 import Logo from './Logo'
-import { docs, install } from './components'
+import {
+  docs,
+  github,
+  install,
+  Container,
+  Pre,
+  features,
+  quotes,
+  demo,
+} from './components'
 import pkg from 'rebass/package.json'
 
 export const name = 'Rebass'
 export { Root } from './components'
 
-const PrimaryButton = styled(Button)({
-  transition: 'background-color .2s ease-out',
-  '&:hover': {
-    backgroundColor: 'magenta'
-  }
-})
+const badges = (
+  <Flex
+    mt={3}
+    alignItems='center'
+    width={1}>
+    <Link
+      mr={2}
+      py={2}
+      href='https://travis-ci.org/rebassjs/rebass'>
+      <Image
+        src='https://img.shields.io/travis/rebassjs/rebass/master.svg'
+      />
+    </Link>
+    <Link
+      ml={2}
+      mr={3}
+      py={2}
+      href='https://github.com/rebassjs/rebass'>
+      <Image
+        src='https://img.shields.io/github/stars/rebassjs/rebass.svg?style=social&label=Star'
+      />
+    </Link>
+  </Flex>
+)
 
-const SecondaryButton = styled(Button)({
-  transition: '.2s ease-out',
-  transitionProperty: 'color, box-shadow',
-  backgroundColor: 'transparent',
-  boxShadow: 'inset 0 0 0 2px',
-  '&:hover': {
-    color: 'magenta',
-    backgroundColor: 'transparent',
-    boxShadow: 'inset 0 0 0 2px magenta'
-  }
-})
-
-const Title = styled(Heading)([])
-
-const Hero = props => (
-  <Banner
-    py={[ 4, 5 ]}
-    style={{
-      WebkitFontSmoothing: 'antialiased'
-    }}
-    color='white'
-    bg='black'>
-    <Flex
-      flexWrap={[ 'wrap', 'wrap', 'nowrap' ]}
-      width={1}
-      mx={-3}
-      mb={3}
-      alignItems='flex-start'>
-      <Flex
-        justifyContent='center'
-        width={[ 1, null, 256, 320, 512 ]}
-        px={0}>
-        <Logo size={[ 256, null, null, 320 ]} />
-      </Flex>
-      <Box width={[ 1, null, 384 ]} px={3}>
-        <Title
-          is='h1'
-          fontSize={[ 6, 7, 8 ]}>
-          Rebass
-        </Title>
-        <Pre mb={2} color=''>v{pkg.version}</Pre>
-        <Lead mb={3} fontWeight='bold' color=''>
-          {pkg.description}
-        </Lead>
+export default props =>
+  <React.Fragment>
+    <Box
+      px={3}
+      py={[ 4, 5 ]}
+      color='white'
+      bg='black'
+      css={{
+        WebkitFontSmoothing: 'antialiased'
+      }}>
+      <Container>
+        <Logo
+          text
+          size={[ 256, null, 320, 384 ]}
+        />
+        <Text
+          my={3}
+          fontSize={3}
+          fontWeight='bold'>
+          React primitive UI components built with styled-system
+        </Text>
         <Flex
-          mx={-3}
-          mb={4}
-          width={1}
+          my={3}
           flexWrap='wrap'
           alignItems='center'>
-          <PrimaryButton
-            is={GoLink}
+          <Button
+            as={GoLink}
             href={docs}
-            fontSize={2}
-            color='black'
-            bg='cyan'
-            children='Documentation'
-            py={3}
-            mx={3}
-            my={3}
+            variant='primary'
+            children='Docs'
           />
-          <SecondaryButton
-            is='a'
+          <Box mx={2} />
+          <Button
+            as='a'
             href='https://github.com/rebassjs/rebass'
-            fontSize={2}
-            color='white'
             children='GitHub'
-            py={3}
-            mx={3}
-            my={3}
+            variant='outline'
           />
           <Pre color='magenta' mx={3} my={3}>{install}</Pre>
         </Flex>
-        <Flex
-          mt={3}
-          alignItems='center'
-          width={1}>
-          <BlockLink
-            mr={2}
-            py={2}
-            href='https://travis-ci.org/rebassjs/rebass'>
-            <Image
-              src='https://img.shields.io/travis/rebassjs/rebass/master.svg'
-            />
-          </BlockLink>
-          <BlockLink
-            ml={2}
-            mr={3}
-            py={2}
-            href='https://github.com/rebassjs/rebass'>
-            <Image
-              src='https://img.shields.io/github/stars/rebassjs/rebass.svg?style=social&label=Star'
-            />
-          </BlockLink>
-        </Flex>
-      </Box>
-    </Flex>
-  </Banner>
-)
-
-const Intro = props =>
-  <Text
-    is='p'
-    fontSize={4}
-    fontWeight='bold'
-    my={5}>
-    Rebass is a library of highly-composable, primitive UI components for React,
-    built with styled-system to make building consistent, responsive web apps simpler and faster.
-  </Text>
-
-const Features = props =>
-  <React.Fragment>
-    <Heading>
-      Features
-    </Heading>
-    <Flex
-      mx={-3}
-      mb={5}
-      flexWrap='wrap'>
-      {[
-        'Functional stateless UI components',
-        'Style encapsulation with CSS-in-JS and styled-components',
-        'No external CSS dependencies',
-        'Configurable theming',
-        'Extensible base components',
-        'Design-system based consistency',
-        'Built for responsive web design',
-        'Write less custom CSS',
-      ].map(feat => (
-        <Box
-          key={feat}
-          width={[ 1/2, null, 1/4 ]}
-          p={3}>
-          <Text fontWeight='bold'>
-            {feat}
-          </Text>
-        </Box>
-      ))}
-    </Flex>
-
-    <Flex flexWrap='wrap' mx={-3} mb={5}>
-      {quotes.map(({ text, name, href }) => (
-        <Box key={name} width={[ 1, null, 1/2 ]} px={3} py={4}>
-          <Blockquote
-            mb={2}
+        <Pre>v{pkg.version}</Pre>
+      </Container>
+    </Box>
+    <Container>
+      <Flex flexWrap='wrap' mx={-3} py={5}>
+        {features.map(feat => (
+          <Box
+            key={feat}
+            width={[ 1, null, 1/2 ]}
+            px={3}
+            my={2}
             fontSize={3}
-            fontWeight='bold'>
-            {text}
-          </Blockquote>
-          <Link fontSize={1} href={href}>{name}</Link>
-        </Box>
-      ))}
-    </Flex>
-  </React.Fragment>
-
-const quotes = [
-  {
-    text: '“One of the best React component libs out there”',
-    name: 'Max Stoiber',
-    href: 'https://twitter.com/mxstbr/status/882657561111080960'
-  },
-  {
-    text: '“Rebass is the Bootstrap of React.”',
-    name: 'Jori Lallo',
-    href: 'https://twitter.com/jorilallo/status/882990343225868289'
-  },
-  {
-    text: '“A whopper component library built on styled-components. Responsive, systematic, scalable...the business!”',
-    name: 'Colm Tuite',
-    href: 'https://twitter.com/colmtuite/status/882715087936606210'
-  },
-  {
-    text: '“Why the hell are we now putting CSS in Javascript? I’m losing my mind with web developers trying to control everything in the world with client-side javascript. What a mess.”',
-    name: 'alttab',
-    href: 'https://news.ycombinator.com/item?id=14705579'
-  }
-]
-
-const code = `<Box px={4} py={5} color='white' bg='magenta'>
-  <Heading
-    is='h1'
-    fontSize={[ 4, 5, 6 ]}>
-    Hello, Rebass
-  </Heading>
-</Box>
-<Flex
-  px={4}
-  py={5}
-  alignItems='center'>
-  <Heading color='blue'>
-    Beep
-  </Heading>
-  <Box mx='auto' />
-  <Button>
-    Beep
-  </Button>
-  <ButtonOutline ml={2}>
-    Boop
-  </ButtonOutline>
-</Flex>
-`
-
-const Demo = props =>
-  <Box id='demo' py={5}>
-    <Heading mb={3}>Live Demo</Heading>
-    <LiveCode code={code} />
-  </Box>
-
-const CTA = props =>
-  <Box py={5}>
-    <Flex flexWrap='wrap' alignItems='center'>
-      <Box>
-        <Heading mb={2}>
-          Getting Started
-        </Heading>
-        <Text fontWeight='bold' mb={3}>
-          Install Rebass now and read the docs to get started
-        </Text>
-        <Pre mb={3}>{install}</Pre>
+            css={{
+              fontWeight: 'bold'
+            }}>
+            {feat}
+          </Box>
+        ))}
+      </Flex>
+      <Flex flexWrap='wrap' mx={-3} py={5}>
+        {quotes.map(({ text, name, href }) => (
+          <Box
+            key={name}
+            width={[ 1, null, 1/2 ]}
+            px={3}
+            my={3}>
+            <Text
+              mb={2}
+              fontSize={3}
+              fontWeight='bold'>
+              {text}
+            </Text>
+            <Link fontSize={1} href={href}>{name}</Link>
+          </Box>
+        ))}
+      </Flex>
+      <Box id='demo' py={4}>
+        <LiveCode code={demo} />
       </Box>
-      <Box mx='auto' />
-      <Box>
+      <Box py={5}>
+        <Heading mb={3} fontSize={5}>Get Started</Heading>
         <Button
-          is={GoLink}
-          fontSize={2}
+          as={GoLink}
+          href={docs}
           py={3}
-          bg='magenta'
-          href={docs}>
-          Documentation
+          variant='primary'>
+          Read the Docs
         </Button>
       </Box>
-      <Box mx='auto' />
-    </Flex>
-  </Box>
-
-const Footer = props =>
-  <Flex mx={-2}>
-    <NavLink href='https://github.com/rebassjs/rebass'>
-      GitHub
-    </NavLink>
-    <NavLink href='https://jxnblk.com'>
-      Made by Jxnblk
-    </NavLink>
-  </Flex>
-
-
-export default class extends React.Component {
-  static defaultProps = {
-    layout: false
-  }
-
-  render () {
-    return (
-      <React.Fragment>
-        <Hero />
-        <Container maxWidth={1280} pb={6}>
-          <Intro />
-          <Features />
-          <Demo />
-          <CTA />
-          <Footer />
-        </Container>
-      </React.Fragment>
-    )
-  }
-}
-
-/* Props/Responsive */
-/* Colors */
-/* Typography */
-/* Grid */
-/* Configuration/Theming */
-/* Customizing/Extending*/
-/* Components */
+    </Container>
+    <Box as='footer' py={5} bg='lightgray'>
+      <Container>
+        <Flex mx={-3} flexWrap='wrap'>
+          <Box width={[ 1/2, null, 1/4 ]}>
+            <NavLink href={docs}>Docs</NavLink>
+            <NavLink href={github}>GitHub</NavLink>
+            <NavLink href='https://rebass-v2.now.sh'>v2 Docs</NavLink>
+          </Box>
+          <Box width={[ 1/2, null, 1/4 ]}>
+            <NavLink href='https://github.com/rebassjs/grid'>Rebass Grid</NavLink>
+            <NavLink href='https://github.com/jxnblk/styled-system'>Styled System</NavLink>
+            <NavLink href='https://jxnblk.com'>Made by Jxnblk</NavLink>
+          </Box>
+        </Flex>
+      </Container>
+    </Box>
+  </React.Fragment>
