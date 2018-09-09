@@ -16,6 +16,7 @@ import {
 import Logo from './Logo'
 import {
   docs,
+  github,
   install,
   Container,
   Pre,
@@ -191,4 +192,14 @@ export default props =>
         <GettingStarted />
       </Box>
     </Container>
+    <Box py={5} bg='lightgray'>
+      <Container>
+        <Flex>
+          <Link href={github}>GitHub</Link>
+          <Link href='https://jxnblk.com'>Made by Jxnblk</Link>
+          <Link href='https://github.com/rebassjs/grid'>Rebass Grid</Link>
+          <Link href='https://github.com/jxnblk/styled-system'>Styled System</Link>
+        </Flex>
+      </Container>
+    </Box>
   </React.Fragment>

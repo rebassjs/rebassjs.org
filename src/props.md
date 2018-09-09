@@ -6,6 +6,7 @@ export const name = 'Props'
 ## Styled System
 
 Rebass components use [styled-system][] for responsive, theme-based style props.
+Each Rebass component extends the base `Box` component, which includes several general-purpose style props.
 
 ## Colors
 
@@ -87,7 +88,18 @@ The margin and padding props use a shorthand syntax, similar to other OOCSS appr
 
 ## Font Size
 
+The `fontSize` prop can pick up values from a typographic scale defined in your theme as a `theme.fontSizes` array.
+
 ## Width
+
+The `width` prop can set fixed or percentage-based widths on an element.
+
+The `width` prop accepts number, string, or array values, where:
+
+- Numbers between 0 and 1 are converted to percentage based widths (e.g. `1/2` becomes `50%`)
+- Numbers greater than 1 are converted to pixels
+- Strings can be used for other CSS values (e.g. `50vw` or `30em`)
+- Arrays can be used for responsive styles
 
 ## Responsive Styles
 

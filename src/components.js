@@ -51,7 +51,7 @@ const theme = {
 
 const nav = [
   'Rebass',
-  // 'Getting Started',
+  'Getting Started',
   'Props',
   'Extending',
   'Theming',
