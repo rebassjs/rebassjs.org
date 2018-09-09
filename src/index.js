@@ -136,8 +136,11 @@ export default props =>
       <Box id='demo' py={4}>
         <LiveCode code={demo} />
       </Box>
-      <Box py={5}>
-        <Heading mb={3} fontSize={5}>Get Started</Heading>
+      <Flex
+        alignItems='center'
+        py={6}>
+        <Heading fontSize={5}>Get Started</Heading>
+        <Box mx='auto' />
         <Button
           as={GoLink}
           href={docs}
@@ -145,7 +148,7 @@ export default props =>
           variant='primary'>
           Read the Docs
         </Button>
-      </Box>
+      </Flex>
     </Container>
     <Box as='footer' py={5} bg='lightgray'>
       <Container>
