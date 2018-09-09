@@ -5,7 +5,7 @@
     "start": "mdx-go src -p 3000",
     "test": "echo \"ok\"",
     "build": "mdx-go build src -d dist",
-    "svg": "scrs src/Logo.js --svg > src/logo.svg",
+    "svg": "scrs src/Icon.js --svg > src/logo.svg",
     "card": "repng src/twitter-card.js -w 1024 -h 512 -d src -f card.png",
     "icon": "repng src/Icon.js -w 512 -h 512 -d src -f icon.png"
   },

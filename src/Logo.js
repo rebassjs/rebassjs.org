@@ -98,6 +98,13 @@ const Logo = props => {
       <circle
         cx={32}
         cy={32}
+        r={32}
+        fill={props.bg}
+        stroke='none'
+      />
+      <circle
+        cx={32}
+        cy={32}
         r={30}
         strokeWidth={props.strokeWidth / 2}
         vectorEffect='non-scaling-stroke'
@@ -109,14 +116,11 @@ const Logo = props => {
           x={32}
           y={40}
           textAnchor='middle'
-          fontFamily='inherit'
+          fontFamily='system-ui, sans-serif'
           fontWeight='bold'
           fontSize='24'
           stroke='none'
-          fill='white'
-          style={{
-            // textTransform: 'uppercase',
-          }}>
+          fill='white'>
           R
         </text>
       )}
@@ -125,7 +129,7 @@ const Logo = props => {
           x={32}
           y={34}
           textAnchor='middle'
-          fontFamily='inherit'
+          fontFamily='system-ui, sans-serif'
           fontWeight='bold'
           fontSize='4'
           stroke='none'
@@ -143,6 +147,7 @@ const Logo = props => {
 
 Logo.defaultProps = {
   ignore: true,
+  bg: 'transparent',
   strokeWidth: 2,
   size: 256
 }
