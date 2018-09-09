@@ -51,6 +51,7 @@ The following keys will be picked up by styled-system props:
 
 Key | Type | Description
 ---|---|---
+`breakpoints` | Array | Array of viewport widths to use for min-width media queries
 `fontSizes` | Array | Array of numbers to use as a typographic scale
 `colors` | Object | Color names that can be used in `color`, `bg`, and `borderColor` props
 `space` | Array | Array of numbers for use as margin and pixel values

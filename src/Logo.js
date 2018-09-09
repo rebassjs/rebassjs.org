@@ -111,7 +111,7 @@ const Logo = props => {
         opacity={1/2}
       />
       {electrons}
-      {props.initial && (
+      {!props.text && props.initial && (
         <text
           x={32}
           y={40}
@@ -146,8 +146,8 @@ const Logo = props => {
 }
 
 Logo.defaultProps = {
-  ignore: true,
-  bg: 'transparent',
+  initial: true,
+  bg: '#000',
   strokeWidth: 2,
   size: 256
 }
