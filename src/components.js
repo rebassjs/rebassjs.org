@@ -1,7 +1,7 @@
 import React from 'react'
 import { width } from 'styled-system'
+import { Head } from 'mdx-go'
 import {
-  Head,
   Link,
   StyleProvider,
   Layout,
