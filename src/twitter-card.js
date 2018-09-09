@@ -15,8 +15,10 @@ export default props => (
     }}>
     <Logo
       static
+      text
       strokeWidth={4}
       size={512}
+      {...props}
     />
   </div>
 )

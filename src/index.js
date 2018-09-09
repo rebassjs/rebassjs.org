@@ -57,15 +57,17 @@ const badges = (
 
 export default props =>
   <React.Fragment>
-    <Box
+    <Flex
       px={3}
       py={[ 4, 5 ]}
       color='white'
       bg='black'
+      alignItems='center'
       css={{
+        minHeight: '90vh',
         WebkitFontSmoothing: 'antialiased'
       }}>
-      <Container>
+      <Container width={1}>
         <Logo
           text
           size={[ 256, null, 320, 384 ]}
@@ -97,7 +99,7 @@ export default props =>
         </Flex>
         <Pre>v{pkg.version}</Pre>
       </Container>
-    </Box>
+    </Flex>
     <Container>
       <Flex flexWrap='wrap' mx={-3} py={5}>
         {features.map(feat => (
