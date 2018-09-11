@@ -11,7 +11,7 @@
 
 prop | default | theme key | style type
 ---|---|---|---
-zIndex |  | N/A | default
+zIndex |  | N/A | responsive
 top |  | N/A | responsive
 right |  | N/A | responsive
 bottom |  | N/A | responsive

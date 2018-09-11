@@ -14,4 +14,4 @@
 
 prop | default | theme key | style type
 ---|---|---|---
-ratio | 0.5625 | N/A | default
+ratio | 0.5625 | N/A | responsive

@@ -1,5 +1,4 @@
 export default [
-  '.BackgroundImage.jsx',
   'Absolute',
   'Arrow',
   'Avatar',

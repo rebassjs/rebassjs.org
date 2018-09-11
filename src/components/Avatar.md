@@ -9,5 +9,5 @@
 
 prop | default | theme key | style type
 ---|---|---|---
+borderRadius | 99999px | radii | responsive
 size | 48 | N/A | responsive
-borderRadius | 99999px | radii | default

@@ -13,11 +13,8 @@
 </div>
 ```
 
-Extends: [Box](/components/Box)
-
 prop | default | theme key | style type
 ---|---|---|---
 position | fixed | N/A | responsive
-width | 320 | N/A | responsive
-zIndex |  | N/A | default
+zIndex |  | N/A | responsive
 height |  | heights | responsive

@@ -8,5 +8,3 @@
   color='blue'
 />
 ```
-
-Extends: [DonutBase](/components/DonutBase)

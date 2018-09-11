@@ -18,13 +18,9 @@
 </div>
 ```
 
-Extends: [Fixed](/components/Fixed) > [Position](/components/Position)
-
 prop | default | theme key | style type
 ---|---|---|---
-top | 50% | N/A | responsive
-left | 50% | N/A | responsive
-borderRadius | 2 | radii | default
+borderRadius | 2 | radii | responsive
+width |  | N/A | responsive
 maxWidth | 100vw | maxWidths | responsive
 maxHeight | 100vh | maxHeights | responsive
-width |  | N/A | responsive

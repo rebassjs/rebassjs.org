@@ -10,8 +10,8 @@
 
 prop | default | theme key | style type
 ---|---|---|---
-fontFamily |  | fonts | default
+fontFamily |  | fonts | responsive
 fontSize |  | fontSizes | responsive
-fontWeight |  | fontWeights | default
+fontWeight |  | fontWeights | responsive
 textAlign |  | N/A | responsive
 lineHeight |  | lineHeights | responsive

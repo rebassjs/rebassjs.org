@@ -14,5 +14,6 @@
 
 prop | default | theme key | style type
 ---|---|---|---
-borderRadius | 2 | radii | default
-boxShadow | 2 | shadows | default
+width |  | N/A | responsive
+borderRadius | 2 | radii | responsive
+boxShadow | 2 | shadows | responsive

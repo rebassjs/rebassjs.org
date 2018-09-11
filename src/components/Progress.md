@@ -9,4 +9,4 @@
 prop | default | theme key | style type
 ---|---|---|---
 width | 1 | N/A | responsive
-borderRadius | 2 | radii | default
+borderRadius | 2 | radii | responsive

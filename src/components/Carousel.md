@@ -21,9 +21,3 @@
   </Box>
 </Carousel>
 ```
-
-Extends: [Flex](/components/Flex) > [Box](/components/Box)
-
-prop | default | theme key | style type
----|---|---|---
-width | 1 | N/A | responsive

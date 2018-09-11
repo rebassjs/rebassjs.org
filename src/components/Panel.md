@@ -20,10 +20,10 @@
 
 prop | default | theme key | style type
 ---|---|---|---
-borderRadius | 2 | radii | default
 border | 1 | borders | responsive
 borderTop |  | borders | responsive
 borderRight |  | borders | responsive
 borderBottom |  | borders | responsive
 borderLeft |  | borders | responsive
-borderColor | gray | colors | default
+borderColor | gray | colors | responsive
+borderRadius | 2 | radii | responsive

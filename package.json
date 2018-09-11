@@ -7,7 +7,7 @@
     "test": "echo \"ok\"",
     "build": "mdx-go build src -d dist",
     "svg": "scrs src/Logo.js --svg > src/logo.svg",
-    "card": "repng src/Card.js -w 1024 -h 512 -d src -f card.png",
+    "card": "repng src/twitter-card.js -w 1024 -h 512 -d src -f card.png",
     "icon": "repng src/Icon.js -w 512 -h 512 -d src -f icon.png"
   },
   "devDependencies": {
@@ -20,7 +20,7 @@
     "emotion-theming": "^9.2.6",
     "mdx-go": "^1.1.5",
     "react-emotion": "^9.2.8",
-    "rebass": "^2.3.2",
+    "rebass": "^2.3.3",
     "scrs": "^1.1.0",
     "styled-system": "^3.0.2",
     "system-components": "^3.0.0"

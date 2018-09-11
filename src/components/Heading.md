@@ -8,8 +8,8 @@
 
 prop | default | theme key | style type
 ---|---|---|---
+fontFamily |  | fonts | responsive
 fontSize | 5 | fontSizes | responsive
-fontWeight | bold | fontWeights | default
+fontWeight | bold | fontWeights | responsive
 lineHeight | 1.25 | lineHeights | responsive
-fontFamily |  | fonts | default
 textAlign |  | N/A | responsive

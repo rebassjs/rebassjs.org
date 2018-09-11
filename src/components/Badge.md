@@ -12,5 +12,5 @@
 prop | default | theme key | style type
 ---|---|---|---
 fontSize |  | fontSizes | responsive
-fontWeight | bold | fontWeights | default
-borderRadius | 2 | radii | default
+fontWeight | bold | fontWeights | responsive
+borderRadius | 2 | radii | responsive
