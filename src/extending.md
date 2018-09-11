@@ -141,7 +141,7 @@ const Embed = props =>
 const Pre = props =>
   <Text
     {...props}
-    is='pre'
+    as='pre'
     fontFamily='Menlo, monospace'
     p={2}
     bg='lightgray'
@@ -167,7 +167,7 @@ const Fixed = props =>
 const Divider = props =>
   <Box
     {...props}
-    is='hr'
+    as='hr'
     bg='gray'
     css={{
       border: 0,
