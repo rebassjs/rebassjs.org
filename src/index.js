@@ -4,7 +4,7 @@ import {
   Link as GoLink,
   NavLink,
   LiveCode
-} from 'mdx-go/styled-components'
+} from 'mdx-go'
 import {
   Flex,
   Box,

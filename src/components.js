@@ -1,15 +1,17 @@
 import React from 'react'
 import { width } from 'styled-system'
 import { Head } from 'mdx-go'
+import { ThemeProvider } from 'styled-components'
 import {
   Link,
-  StyleProvider,
+  ComponentProvider,
+  // StyleProvider,
   Layout,
   NavLinks,
   NavLink,
   Pagination,
   ScrollTop,
-} from 'mdx-go/styled-components'
+} from 'mdx-go'
 import * as Rebass from 'rebass'
 import {
   Box,
@@ -146,13 +148,13 @@ export const Root = props => {
         <meta name='twitter:image' content='https://rebassjs.org/card.png' />
         <link rel='stylesheet' href='//fonts.googleapis.com/css?family=Roboto+Mono' />
       </Head>
-      <StyleProvider
-        theme={theme}
-        components={scope}>
-        <Layout {...props}>
-          {props.children}
-        </Layout>
-      </StyleProvider>
+      <ThemeProvider theme={theme}>
+        <ComponentProvider components={scope}>
+          <Layout {...props}>
+            {props.children}
+          </Layout>
+        </ComponentProvider>
+      </ThemeProvider>
       <ScrollTop {...props} />
       {ga}
     </React.Fragment>
