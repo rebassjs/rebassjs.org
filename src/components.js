@@ -1,17 +1,16 @@
 import React from 'react'
 import { width } from 'styled-system'
-import { Head } from 'mdx-go'
 import { ThemeProvider } from 'styled-components'
 import {
+  Head,
   Link,
-  ComponentProvider,
-  // StyleProvider,
+  // ComponentProvider,
+  StyleProvider,
   Layout,
   NavLinks,
   NavLink,
   Pagination,
-  ScrollTop,
-} from 'mdx-go'
+} from 'mdx-go/components'
 import * as Rebass from 'rebass'
 import {
   Box,
@@ -31,6 +30,7 @@ export const scope = {
 const theme = {
   colors: {
     blue: '#33e',
+    magenta: '#c0c',
     lightgray: '#f6f6ff',
   },
   buttons: {
@@ -50,15 +50,11 @@ const theme = {
       boxShadow: '0 0 24px rgba(0, 0, 0, 0.25)'
     }
   },
-  LiveEditor: {
-    color: '#c0c'
-  },
-  pre: {
-    color: '#c0c'
-  },
-  code: {
-    color: '#c0c'
-  }
+
+  // todo: update for mdx-go 2
+  // LiveEditor: { color: '#c0c' },
+  // pre: { color: '#c0c' },
+  // code: { color: '#c0c' }
 }
 
 const nav = [
@@ -99,13 +95,14 @@ export const Pre = props =>
 
 export const PageLayout = props =>
   <Layout>
-    <Layout.MenuToggle m={3} />
-    <Layout.Sidebar>
+    <Layout.MenuToggle />
+    <Layout.Sidebar bg='white'>
       <NavLinks
         {...props}
         py={1}
         order={nav}
         filter={route => nav.includes(route.name)}
+        activeColor={theme.colors.blue}
       />
       <NavLink
         width={1}
@@ -149,17 +146,40 @@ export const Root = props => {
         <link rel='stylesheet' href='//fonts.googleapis.com/css?family=Roboto+Mono' />
       </Head>
       <ThemeProvider theme={theme}>
-        <ComponentProvider components={scope}>
+        <StyleProvider
+          components={scope}
+          style={{
+            '--mdx-code-color': theme.colors.magenta,
+            '--mdx-pre-color': theme.colors.magenta,
+            '--mdx-pre-background': theme.colors.lightgray,
+          }}
+          css={css}>
           <Layout {...props}>
             {props.children}
           </Layout>
-        </ComponentProvider>
+        </StyleProvider>
       </ThemeProvider>
-      <ScrollTop {...props} />
       {ga}
     </React.Fragment>
   )
 }
+
+const css = `
+pre {
+  font-family: Menlo, monospace;
+  font-size: 14px;
+  padding: 16px;
+  color: ${theme.colors.magenta};
+  background-color: ${theme.colors.lightgray};
+}
+code {
+  font-family: Menlo, monospace;
+  color: ${theme.colors.magenta};
+}
+.mdx-link {
+  color: ${theme.colors.blue};
+}
+`
 
 // todo: update domain
 const ga = (

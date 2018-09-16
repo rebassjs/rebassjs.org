@@ -4,7 +4,9 @@
 Extension of the [Text](/Text) component for headings.
 
 ```.jsx
-<Heading color='magenta'>Hello</Heading>
+<Heading color='blue'>
+  Hello
+</Heading>
 ```
 
 ## Props

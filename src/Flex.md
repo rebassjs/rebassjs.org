@@ -8,8 +8,8 @@ Responsive flexbox layout component. Extends: [Box](/Box).
   <Box
     p={3}
     width={1/2}
-    color='magenta'
-    bg='black'>
+    color='white'
+    bg='blue'>
     Flex
   </Box>
   <Box
