@@ -4,19 +4,3 @@ node_js:
 install:
   - npm i -g npm@6
   - npm ci
-# cache:
-#   directories:
-#     - "$HOME/.npm"
-before_deploy:
-  - npm run build
-  - touch dist/.nojekyll
-  - cp CNAME src/card.png src/logo.svg src/icon.png dist
-deploy:
-  provider: pages
-  skip-cleanup: true
-  verbose: true
-  github-token: $GH_TOKEN
-  target-branch: master
-  local-dir: dist
-  on:
-    branch: src
