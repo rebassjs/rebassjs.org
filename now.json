@@ -1,7 +1,8 @@
 {
   "name": "Rebass",
   "alias": [
-    "rebassjs.org"
+    "rebassjs.org",
+    "www.rebassjs.org"
   ],
   "public": true,
   "type": "static"
