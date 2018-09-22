@@ -137,6 +137,7 @@ export const Root = props => {
   return (
     <React.Fragment>
       <Head>
+        {ga}
         <title>Rebass</title>
         <meta name='description' content='React UI component library & design system, built with styled-components and styled-system' />
         <meta name='twitter:card' content='summary_large_image' />
@@ -154,19 +155,26 @@ export const Root = props => {
         </Layout>
       </StyleProvider>
       <ScrollTop {...props} />
-      {ga}
     </React.Fragment>
   )
 }
 
-// todo: update domain
-const ga = (
+const ga = [
   <script
+    key='ga1'
+    async
+    src='https://www.googletagmanager.com/gtag/js?id=UA-4603832-13'
+  />,
+  <script
+    key='ga2'
     dangerouslySetInnerHTML={{
-      __html: `(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create', 'UA-4603832-6', 'auto'); ga('send', 'pageview');`
+      __html: `window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-4603832-13');`
     }}
   />
-)
+]
 
 export const features = [
   '8 foundational UI components',
