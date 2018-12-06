@@ -139,26 +139,6 @@ See the [styled-system][responsive] docs for more info.
 />
 ```
 
-## `css` prop
-
-All Rebass components include a `css` prop,
-which gives you low-level access to apply any CSS to a component.
-This works well as an escape hatch for one-off styles or as another way to extend Rebass components.
-
-```jsx
-// example of using the `css` prop
-const GrowingButton = props =>
-  <Button
-    {...props}
-    css={{
-      transition: 'transform .1s ease-out',
-      '&:hover': {
-        transform: 'scale(1.1)'
-      }
-    }}
-  />
-```
-
 ## Component-Specific Props
 
 Refer to each component's docs for addition props:
