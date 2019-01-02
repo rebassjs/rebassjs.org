@@ -7,5 +7,5 @@ COPY package-lock.json .
 RUN npm i --only=production
 
 COPY . .
-RUN npm run build && mv dist /public
+RUN npm run build
 COPY src/card.png src/logo.svg src/icon.png /public/
