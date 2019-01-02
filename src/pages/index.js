@@ -1,10 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
+/*
 import {
   Link as GoLink,
   NavLink,
   LiveCode
 } from 'mdx-go/styled-components'
+*/
 import {
   Flex,
   Box,
@@ -14,7 +16,7 @@ import {
   Image,
   Link,
 } from 'rebass'
-import Logo from './Logo'
+import Logo from '../Logo'
 import {
   docs,
   github,
@@ -24,11 +26,15 @@ import {
   features,
   quotes,
   demo,
-} from './components'
+} from '../components'
 import pkg from 'rebass/package.json'
 
 export const name = 'Rebass'
-export { Root } from './components'
+export { Root } from '../components'
+
+// shims
+const NavLink = 'a'
+const LiveCode = 'pre'
 
 const badges = (
   <Flex
@@ -83,7 +89,7 @@ export default props =>
           flexWrap='wrap'
           alignItems='center'>
           <Button
-            as={GoLink}
+            as={'a'}
             href={docs}
             variant='primary'
             children='Docs'
@@ -142,7 +148,7 @@ export default props =>
         <Heading fontSize={5}>Get Started</Heading>
         <Box mx='auto' />
         <Button
-          as={GoLink}
+          as={'a'}
           href={docs}
           py={3}
           variant='primary'>

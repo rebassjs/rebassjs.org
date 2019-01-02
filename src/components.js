@@ -1,6 +1,7 @@
 import React from 'react'
 import { width } from 'styled-system'
-import { Head } from 'mdx-go'
+import { Helmet as Head } from 'react-helmet'
+/*
 import {
   Link,
   StyleProvider,
@@ -10,6 +11,7 @@ import {
   Pagination,
   ScrollTop,
 } from 'mdx-go/styled-components'
+*/
 import * as Rebass from 'rebass'
 import {
   Box,
@@ -95,6 +97,7 @@ export const Pre = props =>
     }}
   />
 
+/*
 export const PageLayout = props =>
   <Layout>
     <Layout.MenuToggle m={3} />
@@ -128,11 +131,13 @@ export const PageLayout = props =>
       />
     </Layout.Main>
   </Layout>
+*/
 
+// move to layouts
 export const Root = props => {
-  const Layout = [ '/', '/home' ].includes(props.location.pathname)
-    ? props => props.children
-    : PageLayout
+  // const Layout = [ '/', '/home' ].includes(props.location.pathname)
+  //   ? props => props.children
+  //   : PageLayout
 
   return (
     <React.Fragment>
@@ -147,6 +152,8 @@ export const Root = props => {
         <meta name='twitter:image' content='https://rebassjs.org/card.png' />
         <link rel='stylesheet' href='//fonts.googleapis.com/css?family=Roboto+Mono' />
       </Head>
+      {props.children}
+      {/*
       <StyleProvider
         theme={theme}
         components={scope}>
@@ -155,6 +162,7 @@ export const Root = props => {
         </Layout>
       </StyleProvider>
       <ScrollTop {...props} />
+      */}
     </React.Fragment>
   )
 }

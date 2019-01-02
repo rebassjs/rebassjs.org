@@ -1,10 +1,9 @@
 {
   "private": true,
-  "name": "rebass.github.io",
+  "name": "rebassjs.org",
   "scripts": {
-    "start": "mdx-go src -p 3000",
-    "test": "echo \"ok\"",
-    "build": "mdx-go build src -d dist",
+    "start": "gatsby develop",
+    "build": "gatsby build",
     "svg": "scrs src/Logo.js --svg > src/logo.svg",
     "card": "repng src/twitter-card.js -w 1024 -h 512 -d src -f card.png",
     "icon": "repng src/Icon.js -w 512 -h 512 -d src -f icon.png"
@@ -13,7 +12,14 @@
     "repng": "^3.1.0"
   },
   "dependencies": {
-    "mdx-go": "^1.1.10",
+    "@mdx-js/mdx": "^0.16.6",
+    "@mdx-js/tag": "^0.16.6",
+    "gatsby": "2.0.53",
+    "gatsby-mdx": "^0.2.0",
+    "gatsby-plugin-react-helmet": "^3.0.5",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0",
+    "react-helmet": "^5.2.0",
     "rebass": "^3.0.0-9",
     "scrs": "^1.1.0",
     "styled-components": "^4.0.0-beta.8"
