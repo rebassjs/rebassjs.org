@@ -5,23 +5,20 @@
     "start": "gatsby develop",
     "build": "gatsby build",
     "svg": "scrs src/Logo.js --svg > src/logo.svg",
-    "card": "repng src/twitter-card.js -w 1024 -h 512 -d src -f card.png",
-    "icon": "repng src/Icon.js -w 512 -h 512 -d src -f icon.png"
-  },
-  "devDependencies": {
-    "repng": "^3.1.0"
+    "card": "npx repng src/twitter-card.js -w 1024 -h 512 -d src -f card.png",
+    "icon": "npx repng src/Icon.js -w 512 -h 512 -d src -f icon.png"
   },
   "dependencies": {
     "@mdx-js/mdx": "^0.16.6",
     "@mdx-js/tag": "^0.16.6",
-    "gatsby": "2.0.53",
-    "gatsby-mdx": "^0.2.0",
+    "gatsby": "^2.0.83",
+    "gatsby-mdx": "^0.3.2",
     "gatsby-plugin-react-helmet": "^3.0.5",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
     "react-helmet": "^5.2.0",
-    "rebass": "^3.0.0-9",
+    "rebass": "^3.0.0",
     "scrs": "^1.1.0",
-    "styled-components": "^4.0.0-beta.8"
+    "styled-components": "^4.1.3"
   }
 }
