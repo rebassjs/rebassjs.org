@@ -4,6 +4,7 @@
   "scripts": {
     "start": "gatsby develop",
     "build": "gatsby build",
+    "now-build": "npm run build",
     "svg": "npx scrs src/Logo.js --svg > src/logo.svg",
     "card": "npx repng src/twitter-card.js -w 1024 -h 512 -d src -f card.png",
     "icon": "npx repng src/Icon.js -w 512 -h 512 -d src -f icon.png"
