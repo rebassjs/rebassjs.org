@@ -4,7 +4,7 @@
   "scripts": {
     "start": "gatsby develop",
     "build": "gatsby build",
-    "svg": "scrs src/Logo.js --svg > src/logo.svg",
+    "svg": "npx scrs src/Logo.js --svg > src/logo.svg",
     "card": "npx repng src/twitter-card.js -w 1024 -h 512 -d src -f card.png",
     "icon": "npx repng src/Icon.js -w 512 -h 512 -d src -f icon.png"
   },
@@ -18,7 +18,6 @@
     "react-dom": "^16.7.0",
     "react-helmet": "^5.2.0",
     "rebass": "^3.0.0",
-    "scrs": "^1.1.0",
     "styled-components": "^4.1.3"
   }
 }

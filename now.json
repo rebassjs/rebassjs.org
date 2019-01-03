@@ -1,8 +1,17 @@
 {
+  "version": 2,
   "name": "Rebass",
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@now/static-build",
+      "config": {
+        "distDir": "public"
+      }
+    }
+  ],
   "alias": [
     "rebassjs.org"
   ],
-  "public": true,
-  "type": "static"
+  "public": true
 }
