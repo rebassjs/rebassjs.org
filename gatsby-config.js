@@ -1,4 +1,3 @@
-
 const path = require('path')
 
 module.exports = {
@@ -13,12 +12,13 @@ module.exports = {
   },
   plugins: [
     'gatsby-plugin-react-helmet',
-    // 'gatsby-plugin-layout',
+    'gatsby-plugin-styled-components',
+    'gatsby-plugin-layout',
     { resolve: 'gatsby-mdx',
       options: {
         extensions: [ '.mdx', '.md' ],
         defaultLayouts: {
-          default: require.resolve('./src/layouts/index.js')
+          default: require.resolve('./src/layouts/sidebar.js')
         }
       }
     }
