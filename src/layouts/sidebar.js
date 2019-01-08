@@ -2,34 +2,31 @@ import React from 'react'
 import { Flex, Box, Link } from 'rebass'
 import styled from 'styled-components'
 import { Link as GatsbyLink } from 'gatsby'
-
-// this is a pretty confusing API...
 import Sidebar from 'react-sidebar'
-// import Component from '@reach/component-component'
 
-const mq = window.matchMedia('screen and (min-width:40em)')
 
 class SidebarState extends React.Component {
   state = {
     open: false,
-    docked: mq.matches,
+    docked: true
   }
   update = fn => this.setState(fn)
 
   handleMedia = () => {
-    console.log('handleMedia', mq)
+    console.log('handleMedia', this.media)
     this.setState({
-      docked: mq.matches,
+      docked: this.media.matches,
       open: false
     })
   }
 
   componentDidMount () {
-    mq.addListener(this.handleMedia)
+    this.media = window.matchMedia('screen and (min-width:40em)')
+    this.media.addListener(this.handleMedia)
   }
 
   componentWillUnmount () {
-    mq.removeListener(this.handleMedia)
+    this.media.removeListener(this.handleMedia)
   }
 
   render () {
@@ -124,7 +121,6 @@ export default props =>
             maxWidth: 768,
             minHeight: '100vh',
           }}>
-          <pre>{mq.matches ? 'desktop' : 'mobile'}</pre>
           {props.children}
         </Box>
       </Sidebar>
