@@ -1,5 +1,5 @@
 import React from 'react'
-import { graphql } from 'gatsby'
+import { graphql, Link as GLink } from 'gatsby'
 import styled from 'styled-components'
 import {
   Flex,
@@ -10,24 +10,34 @@ import {
   Image,
   Link,
 } from 'rebass'
+import pkg from 'rebass/package.json'
 import Logo from '../Logo'
+import LiveCode from '../LiveCode'
+import NavLink from '../NavLink'
 import {
-  docs,
-  github,
-  install,
   Container,
   Pre,
-  features,
-  quotes,
-  demo,
 } from '../components'
-import pkg from 'rebass/package.json'
+
+const demo = `<Flex
+  px={4}
+  py={4}
+  alignItems='center'>
+  <Heading
+    fontSize={[ 4, 5 ]}
+    color='blue'>
+    Live Demo
+  </Heading>
+  <Box mx='auto' />
+  <Button>
+    Beep
+  </Button>
+  <Button ml={2}>
+    Boop
+  </Button>
+</Flex>`
 
 export const name = 'Rebass'
-
-// shims
-const NavLink = 'a'
-const LiveCode = 'pre'
 
 const badges = (
   <Flex
@@ -101,7 +111,7 @@ export default props =>
     </Flex>
     <Container>
       <Flex flexWrap='wrap' mx={-3} py={5}>
-        {features.map(feat => (
+        {props.data.site.siteMetadata.features.map(feat => (
           <Box
             key={feat}
             width={[ 1, null, 1/2 ]}
@@ -116,7 +126,7 @@ export default props =>
         ))}
       </Flex>
       <Flex flexWrap='wrap' mx={-3} py={5}>
-        {quotes.map(({ text, name, href }) => (
+        {props.data.site.siteMetadata.quotes.map(({ text, name, href }) => (
           <Box
             key={name}
             width={[ 1, null, 1/2 ]}
@@ -142,7 +152,7 @@ export default props =>
         <Box mx='auto' />
         <Button
           as={'a'}
-          href={docs}
+          href='/getting-started'
           py={3}
           variant='primary'>
           Read the Docs
@@ -153,8 +163,8 @@ export default props =>
       <Container>
         <Flex mx={-3} flexWrap='wrap'>
           <Box width={[ 1/2, null, 1/4 ]}>
-            <NavLink href={docs}>Docs</NavLink>
-            <NavLink href={github}>GitHub</NavLink>
+            <NavLink href='/getting-started'>Docs</NavLink>
+            <NavLink href={props.data.site.siteMetadata.github}>GitHub</NavLink>
             <NavLink href='https://rebass-v2.now.sh'>v2 Docs</NavLink>
           </Box>
           <Box width={[ 1/2, null, 1/4 ]}>

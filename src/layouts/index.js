@@ -13,12 +13,25 @@ const Style = createGlobalStyle({
   }
 })
 
+const code = ({
+  className,
+  ...props
+}) => /\.jsx/.test(className) ? (
+  <LiveCode
+    {...props}
+    code={props.children}
+  />
+) : (
+  <pre className={className} {...props} />
+)
+
+
 const components = {
   h1: props => <Heading as='h1' fontSize={6} {...props} />,
   h2: props => <Heading as='h2' fontSize={5} {...props} />,
   h3: props => <Heading as='h2' fontSize={4} {...props} />,
   pre: props => props.children,
-  code: LiveCode,
+  code,
 }
 
 const ga = [

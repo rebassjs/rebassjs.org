@@ -3,6 +3,7 @@ import { Flex, Box, Link } from 'rebass'
 import styled, { ThemeProvider } from 'styled-components'
 import { Link as GatsbyLink } from 'gatsby'
 import Sidebar from 'react-sidebar'
+import NavLink from '../NavLink'
 import theme from '../theme'
 
 class SidebarState extends React.Component {
@@ -35,20 +36,6 @@ class SidebarState extends React.Component {
       update: this.update,
     })
   }
-}
-
-const NavLink = styled(Link)({
-  display: 'block',
-  textDecoration: 'none',
-  fontWeight: 'bold',
-})
-
-NavLink.defaultProps = {
-  as: GatsbyLink,
-  fontSize: 14,
-  px: 2,
-  py: 1,
-  color: 'inherit',
 }
 
 export default props =>
