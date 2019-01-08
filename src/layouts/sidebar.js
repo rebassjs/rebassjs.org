@@ -1,9 +1,9 @@
 import React from 'react'
 import { Flex, Box, Link } from 'rebass'
-import styled from 'styled-components'
+import styled, { ThemeProvider } from 'styled-components'
 import { Link as GatsbyLink } from 'gatsby'
 import Sidebar from 'react-sidebar'
-
+import theme from '../theme'
 
 class SidebarState extends React.Component {
   state = {
@@ -37,18 +37,6 @@ class SidebarState extends React.Component {
   }
 }
 
-/*
-const xSidebar = styled(Box)({
-  '@media screen and (max-width: 40em)': {
-    position: 'fixed',
-    top: 0,
-    bottom: 0,
-    left: 0,
-    transform: 'translateX(-100%)',
-  }
-})
-*/
-
 const NavLink = styled(Link)({
   display: 'block',
   textDecoration: 'none',
@@ -57,6 +45,7 @@ const NavLink = styled(Link)({
 
 NavLink.defaultProps = {
   as: GatsbyLink,
+  fontSize: 14,
   px: 2,
   py: 1,
   color: 'inherit',
@@ -74,9 +63,9 @@ export default props =>
         docked={docked}
         onSetOpen={open => update({ open })}
         shadow={false}
+        defaultSidebarWidth={256}
         sidebar={(
           <Box
-            bg='#f6f6f6'
             width={[ 256 ]}
             px={0}
             py={4}

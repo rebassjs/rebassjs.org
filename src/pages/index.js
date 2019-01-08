@@ -1,12 +1,6 @@
 import React from 'react'
+import { graphql } from 'gatsby'
 import styled from 'styled-components'
-/*
-import {
-  Link as GoLink,
-  NavLink,
-  LiveCode
-} from 'mdx-go/styled-components'
-*/
 import {
   Flex,
   Box,
@@ -30,7 +24,6 @@ import {
 import pkg from 'rebass/package.json'
 
 export const name = 'Rebass'
-export { Root } from '../components'
 
 // shims
 const NavLink = 'a'
@@ -82,7 +75,7 @@ export default props =>
           my={3}
           fontSize={3}
           fontWeight='bold'>
-          React primitive UI components built with styled-system
+          {props.data.site.siteMetadata.description}
         </Text>
         <Flex
           my={3}
@@ -90,7 +83,7 @@ export default props =>
           alignItems='center'>
           <Button
             as={'a'}
-            href={docs}
+            href='/getting-started'
             variant='primary'
             children='Docs'
           />
@@ -101,7 +94,7 @@ export default props =>
             children='GitHub'
             variant='outline'
           />
-          <Pre color='magenta' mx={3} my={3}>{install}</Pre>
+          <Pre color='magenta' mx={3} my={3}>{props.data.site.siteMetadata.install}</Pre>
         </Flex>
         <Pre>v{pkg.version}</Pre>
       </Container>
@@ -173,3 +166,20 @@ export default props =>
       </Container>
     </Box>
   </React.Fragment>
+
+export const query = graphql`
+  query HomePage {
+    site {
+      siteMetadata {
+        description
+        install
+        features
+        quotes {
+          text
+          name
+          href
+        }
+      }
+    }
+  }
+`
