@@ -16,12 +16,15 @@ export default props =>
   </ThemeProvider>
 ```
 
+If you do not apply your own theme, or you don't include all the keys the theme object expects, Rebass will revert to the default values, which are inherited from [styled-system][].
+
 An example theme could look like the following:
 
 ```js
 // example theme.js
 
 export default {
+  breakpoints: [40, 52, 64],
   fontSizes: [
     12, 14, 16, 20, 24, 32, 48, 64
   ],
@@ -51,7 +54,7 @@ The following keys will be picked up by styled-system props:
 
 Key | Type | Description
 ---|---|---
-`breakpoints` | Array | Array of viewport widths to use for min-width media queries
+`breakpoints` | Array | Array of numbers representing viewport widths to use for min-width media queries.
 `fontSizes` | Array | Array of numbers to use as a typographic scale
 `colors` | Object | Color names that can be used in `color`, `bg`, and `borderColor` props
 `space` | Array | Array of numbers for use as margin and pixel values
@@ -63,6 +66,8 @@ Key | Type | Description
 `borders` | Array or Object | Values for `border` props
 `radii` | Array or Object | Values for `borderRadius` props
 `opacity` | Array or Object | Values for `opacity` props
+
+By default arrays of numbers are interpreted as `em`, other unit of measurements can be specified by using an array of strings instead, e.x. `['768px', '992px', '1200px']`.
 
 Additionally, each Rebass component can be themed with
 CSS objects and added to the theme with a key corresponding to its name.
