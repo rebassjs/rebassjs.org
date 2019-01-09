@@ -24,7 +24,7 @@ An example theme could look like the following:
 // example theme.js
 
 export default {
-  breakpoints: [40, 52, 64],
+  breakpoints: ['40em', '52em', '64em'],
   fontSizes: [
     12, 14, 16, 20, 24, 32, 48, 64
   ],
@@ -67,7 +67,7 @@ Key | Type | Description
 `radii` | Array or Object | Values for `borderRadius` props
 `opacity` | Array or Object | Values for `opacity` props
 
-By default arrays of numbers are interpreted as `em`, other unit of measurements can be specified by using an array of strings instead, e.x. `['768px', '992px', '1200px']`.
+By default arrays of numbers are interpreted as `px`, other unit of measurements can be specified by using an array of strings instead, e.x. `['768px', '992px', '1200px']`.
 
 Additionally, each Rebass component can be themed with
 CSS objects and added to the theme with a key corresponding to its name.
