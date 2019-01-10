@@ -141,9 +141,11 @@ See the [styled-system][responsive] docs for more info.
 
 ## `css` prop
 
-All Rebass components include a `css` prop,
-which gives you low-level access to apply any CSS to a component.
-This works well as an escape hatch for one-off styles or as another way to extend Rebass components.
+Previous versions of Rebass included an implementation for handling a `css` prop.
+To enable this prop with styled-components v4, add the [`babel-plugin-styled-components`][babel-plugin] plugin to your Babel configuration.
+
+[babel-plugin]: https://www.styled-components.com/docs/api#css-prop
+
 
 ```jsx
 // example of using the `css` prop

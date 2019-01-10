@@ -1,16 +1,34 @@
 // root layout
 import React from 'react'
-import { ThemeProvider, createGlobalStyle } from 'styled-components'
+import { Link as GLink } from 'gatsby'
+import styled, { ThemeProvider, createGlobalStyle } from 'styled-components'
 import { MDXProvider } from '@mdx-js/tag'
 import { Helmet } from 'react-helmet'
-import { Box, Heading } from 'rebass'
+import { Box, Heading, Link } from 'rebass'
+import Slugger from 'github-slugger'
+import isAbsoluteURL from 'is-absolute-url'
 import LiveCode from '../LiveCode'
 import theme from '../theme'
+
+const slugger = new Slugger()
 
 const Style = createGlobalStyle({
   body: {
     margin: 0
   }
+})
+
+const Pre = styled.pre({
+  fontFamily: '"Roboto Mono", Menlo, monospace',
+  fontSize: '14px',
+  padding: '1em',
+  marginTop: '32px',
+  marginBottom: '32px',
+  outline: 'none',
+  overflowX: 'auto',
+  borderRadius: '2px',
+  color: '#c0c',
+  backgroundColor: '#f6f6ff',
 })
 
 const code = ({
@@ -22,14 +40,48 @@ const code = ({
     code={props.children}
   />
 ) : (
-  <pre className={className} {...props} />
+  <Pre className={className} {...props} />
 )
 
+const a = ({ href, ...props }) => isAbsoluteURL(href)
+  ? <Link href={href} {...props} />
+  : <Link as={GLink} to={href} {...props} />
+
+const UnstyledLink = styled.a({
+  color: 'inherit',
+  textDecoration: 'none',
+  '&:hover': {
+    textDecoration: 'underline',
+  }
+})
+
+const withLink = ({ as, ...defaultProps }) => ({
+  children,
+  ...props
+}) => {
+  slugger.reset()
+  const id = slugger.slug(children)
+  return (
+    <Heading
+      id={id}
+      as={as}
+      {...defaultProps}
+      {...props}>
+      <UnstyledLink href={'#' + id}>
+        {children}
+      </UnstyledLink>
+    </Heading>
+  )
+}
 
 const components = {
-  h1: props => <Heading as='h1' fontSize={6} {...props} />,
-  h2: props => <Heading as='h2' fontSize={5} {...props} />,
-  h3: props => <Heading as='h2' fontSize={4} {...props} />,
+  h1: withLink({ as: 'h1', fontSize: 6, mt: 4, mb: 2 }),
+  h2: withLink({ as: 'h2', fontSize: 5, mt: 4, mb: 2 }),
+  h3: withLink({ as: 'h3', fontSize: 4, mt: 4, mb: 2 }),
+  h4: withLink({ as: 'h4', fontSize: 3, mt: 4, mb: 2 }),
+  h5: withLink({ as: 'h5', fontSize: 2, mt: 4, mb: 2 }),
+  h6: withLink({ as: 'h6', fontSize: 1, mt: 4, mb: 2 }),
+  a,
   pre: props => props.children,
   code,
 }

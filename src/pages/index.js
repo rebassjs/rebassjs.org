@@ -92,8 +92,8 @@ export default props =>
           flexWrap='wrap'
           alignItems='center'>
           <Button
-            as={'a'}
-            href='/getting-started'
+            as={GLink}
+            to='/getting-started'
             variant='primary'
             children='Docs'
           />
@@ -151,8 +151,8 @@ export default props =>
         <Heading fontSize={5}>Get Started</Heading>
         <Box mx='auto' />
         <Button
-          as={'a'}
-          href='/getting-started'
+          as={GLink}
+          to='/getting-started'
           py={3}
           variant='primary'>
           Read the Docs
