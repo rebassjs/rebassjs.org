@@ -13,10 +13,17 @@ import pkg from 'rebass/package.json'
 import Logo from '../Logo'
 import LiveCode from '../LiveCode'
 import NavLink from '../NavLink'
-import {
-  Container,
-  Pre,
-} from '../components'
+import { Pre } from '../layouts'
+
+const Container = props =>
+  <Box
+    {...props}
+    px={4}
+    mx='auto'
+    css={{
+      maxWidth: '1024px'
+    }}
+  />
 
 const demo = `<Flex
   px={4}

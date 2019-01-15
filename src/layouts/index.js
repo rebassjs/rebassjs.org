@@ -18,7 +18,7 @@ const Style = createGlobalStyle({
   }
 })
 
-const Pre = styled.pre({
+export const Pre = styled.pre({
   fontFamily: '"Roboto Mono", Menlo, monospace',
   fontSize: '14px',
   padding: '1em',
