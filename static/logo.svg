@@ -1,13 +1,13 @@
 <?xml version="1.0" standalone="yes"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
   "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" style="display:block;max-width:100%;margin:0;fill:none;stroke:cyan" vector-effect="non-scaling-stroke" class="sc-htoDjs bSNieN"><style data-styled="bSNieN gAExgp PwswZ" data-styled-version="4.0.0-beta.1">/* <![CDATA[ */ 
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" style="display:block;max-width:100%;margin:0;fill:none;stroke:cyan" vector-effect="non-scaling-stroke" class="sc-htoDjs bSNieN"><style data-styled="bSNieN gAExgp PwswZ" data-styled-version="4.1.3">/* <![CDATA[ */ 
 /* sc-component-id: sc-htoDjs */
-.sc-htoDjs {} .bSNieN{-webkit-transform:rotate3d(1,1,1,0deg);-ms-transform:rotate3d(1,1,1,0deg);transform:rotate3d(1,1,1,0deg);width:256px;height:256px;}
+.bSNieN{-webkit-transform:rotate3d(1,1,1,0deg);-ms-transform:rotate3d(1,1,1,0deg);transform:rotate3d(1,1,1,0deg);width:256px;height:256px;}
 /* sc-component-id: sc-dnqmqq */
-.sc-dnqmqq {} .gAExgp{-webkit-transform-origin:50% 50%;-ms-transform-origin:50% 50%;transform-origin:50% 50%;-webkit-animation-name:phEs,ipaUyp;animation-name:phEs,ipaUyp;-webkit-animation-duration:4s,7s;animation-duration:4s,7s;-webkit-animation-timing-function:linear;animation-timing-function:linear;-webkit-animation-iteration-count:infinite;animation-iteration-count:infinite;}
+.gAExgp{-webkit-transform-origin:50% 50%;-ms-transform-origin:50% 50%;transform-origin:50% 50%;-webkit-animation-name:phEs,ipaUyp;animation-name:phEs,ipaUyp;-webkit-animation-duration:4s,7s;animation-duration:4s,7s;-webkit-animation-timing-function:linear;animation-timing-function:linear;-webkit-animation-iteration-count:infinite;animation-iteration-count:infinite;}
 /* sc-component-id: sc-iwsKbI */
-.sc-iwsKbI {} .PwswZ{-webkit-transform-origin:50% 50%;-ms-transform-origin:50% 50%;transform-origin:50% 50%;-webkit-animation-name:gcRPJT,ipaUyp;animation-name:gcRPJT,ipaUyp;-webkit-animation-duration:4s,8s;animation-duration:4s,8s;-webkit-animation-timing-function:linear;animation-timing-function:linear;-webkit-animation-iteration-count:infinite;animation-iteration-count:infinite;} /* ]]> */</style><style data-styled="phEs ipaUyp gcRPJT" data-styled-version="4.0.0-beta.1">/* <![CDATA[ */ 
+.PwswZ{-webkit-transform-origin:50% 50%;-ms-transform-origin:50% 50%;transform-origin:50% 50%;-webkit-animation-name:gcRPJT,ipaUyp;animation-name:gcRPJT,ipaUyp;-webkit-animation-duration:4s,8s;animation-duration:4s,8s;-webkit-animation-timing-function:linear;animation-timing-function:linear;-webkit-animation-iteration-count:infinite;animation-iteration-count:infinite;} /* ]]> */</style><style data-styled="phEs ipaUyp gcRPJT" data-styled-version="4.1.3">/* <![CDATA[ */ 
 /* sc-component-id: sc-keyframes-phEs */
 @-webkit-keyframes phEs{50%{-webkit-transform:rotate3d(0,2,1,180deg);-ms-transform:rotate3d(0,2,1,180deg);transform:rotate3d(0,2,1,180deg);}100%{-webkit-transform:rotate3d(0,2,1,360deg);-ms-transform:rotate3d(0,2,1,360deg);transform:rotate3d(0,2,1,360deg);}} @keyframes phEs{50%{-webkit-transform:rotate3d(0,2,1,180deg);-ms-transform:rotate3d(0,2,1,180deg);transform:rotate3d(0,2,1,180deg);}100%{-webkit-transform:rotate3d(0,2,1,360deg);-ms-transform:rotate3d(0,2,1,360deg);transform:rotate3d(0,2,1,360deg);}}
 /* sc-component-id: sc-keyframes-ipaUyp */
