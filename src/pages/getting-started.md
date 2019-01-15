@@ -1,10 +1,8 @@
 
-export const name = 'Getting Started'
-
 # Getting Started
 
 ```sh
-npm i rebass@next
+npm i rebass
 ```
 
 Import components directly from Rebass and use them to build out your UI.

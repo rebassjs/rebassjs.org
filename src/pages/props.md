@@ -1,6 +1,4 @@
 
-export const name = 'Props'
-
 # Props
 
 ## Styled System

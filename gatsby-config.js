@@ -24,7 +24,7 @@ module.exports = {
       { text: 'Image', href: '/Image' },
       { text: 'Card', href: '/Card' },
       { text: 'Advanced', href: '/advanced' },
-      { text: 'Examples', href: '/examples' },
+      { text: 'Recipes', href: '/recipes' },
     ],
     features: [
       '8 foundational UI components',

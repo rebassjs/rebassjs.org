@@ -36,8 +36,6 @@ const demo = `<Flex
   </Button>
 </Flex>`
 
-export const name = 'Rebass'
-
 const badges = (
   <Flex
     mt={3}
@@ -180,7 +178,9 @@ export default props =>
         <Flex mx={-3} flexWrap='wrap'>
           <Box width={[ 1/2, null, 1/4 ]}>
             <NavLink href='/getting-started'>Docs</NavLink>
-            <NavLink href={props.data.site.siteMetadata.github}>GitHub</NavLink>
+            <NavLink href={props.data.site.siteMetadata.github}>
+              GitHub
+            </NavLink>
             <NavLink href='https://rebass-v2.now.sh'>v2 Docs</NavLink>
           </Box>
           <Box width={[ 1/2, null, 1/4 ]}>
@@ -199,6 +199,7 @@ export const query = graphql`
       siteMetadata {
         description
         install
+        github
         features
         quotes {
           text

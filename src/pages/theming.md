@@ -1,6 +1,4 @@
 
-export const name = 'Theming'
-
 # Theming
 
 To apply themes to Rebass components, add a [ThemeProvider][] component to the root of your application and pass a `theme` object as a prop.

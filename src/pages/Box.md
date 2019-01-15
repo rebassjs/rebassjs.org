@@ -21,4 +21,6 @@ Responsive box-model layout component.
 - `fontSize`: responsive [font size](props/#font-size)
 - `color`: text color
 - `bg`: background color
-- `css`: additional CSS object or string overrides
+- `flex`: CSS flex shorthand property
+- `order`: CSS order property
+- `alignSelf`: CSS align-self property

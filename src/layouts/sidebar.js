@@ -1,10 +1,11 @@
 import React from 'react'
 import { Flex, Box, Text, Link } from 'rebass'
-import { ThemeProvider } from 'styled-components'
+import styled, { ThemeProvider } from 'styled-components'
 import { graphql, StaticQuery } from 'gatsby'
 import { Location } from '@reach/router'
 import Sidebar from 'react-sidebar'
 import NavLink from '../NavLink'
+import { Burger } from 'reline'
 
 const query = graphql`
   query SidebarQuery {
@@ -19,15 +20,21 @@ const query = graphql`
   }
 `
 
+const breakpoint = 'screen and (min-width:40em)'
+
+const initialMQ = typeof window !== 'undefined'
+  ? window.matchMedia(breakpoint)
+  : { matches: false }
+
 class SidebarState extends React.Component {
   state = {
     open: false,
-    docked: true
+    docked: initialMQ.matches
   }
+
   update = fn => this.setState(fn)
 
   handleMedia = () => {
-    console.log('handleMedia', this.media)
     this.setState({
       docked: this.media.matches,
       open: false
@@ -35,7 +42,7 @@ class SidebarState extends React.Component {
   }
 
   componentDidMount () {
-    this.media = window.matchMedia('screen and (min-width:40em)')
+    this.media = window.matchMedia(breakpoint)
     this.media.addListener(this.handleMedia)
   }
 
@@ -61,6 +68,9 @@ const Pagination = ({
     const i = navigation.findIndex(n => n.href === removeSlash(location.pathname))
     const previous = navigation[i - 1]
     const next = navigation[i + 1]
+
+    if (i < 0) return false
+
     return (
       <Flex py={4}>
         {previous && (
@@ -89,6 +99,22 @@ const Pagination = ({
   }}
 />
 
+const MenuButton = styled.button({
+  appearance: 'none',
+  padding: '8px',
+  margin: 0,
+  fontFamily: 'inherit',
+  fontSize: 'inherit',
+  color: 'inherit',
+  backgroundColor: 'transparent',
+  border: 0,
+  outline: 'none',
+  '&:focus': {
+    color: 'magenta',
+    outline: '1px solid magenta'
+  }
+})
+
 export default props =>
   <SidebarState
     render={({
@@ -110,6 +136,7 @@ export default props =>
                 width={[ 256 ]}
                 px={2}
                 py={3}
+                bg='white'
                 style={{
                   minHeight: '100vh'
                 }}>
@@ -121,18 +148,19 @@ export default props =>
                   />
                 ))}
                 <Box my={4} />
-                <NavLink to='https://github.com/rebassjs/rebass' children='GitHub' />
-                <NavLink to='https://jxnblk.com' children='Made by Jxnblk' />
+                <NavLink href='https://github.com/rebassjs/rebass' children='GitHub' />
+                <NavLink href='https://jxnblk.com' children='Made by Jxnblk' />
               </Box>
             )}>
             {!docked && (
-              <button
+              <MenuButton
                 onClick={e => {
                   e.preventDefault()
                   update(state => ({ open: !state.open }))
                 }}
-                children='Menu'
-              />
+                title='Menu'>
+                <Burger />
+              </MenuButton>
             )}
             <Box
               {...props}

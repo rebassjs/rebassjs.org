@@ -1,8 +1,5 @@
 
-export const name = 'Examples'
-
-# Examples
-
+# Recipes
 
 ```.jsx
 <Flex mx={-2}>

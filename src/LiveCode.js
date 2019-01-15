@@ -9,8 +9,11 @@ import {
 import * as Rebass from 'rebass'
 import { Box } from 'rebass'
 
+const CSSBox = styled(Box)(props => props.css)
+
 const scope = {
   ...Rebass,
+  Box: CSSBox,
   photo: 'https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=2048&q=20',
 }
 
