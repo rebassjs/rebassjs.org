@@ -64,18 +64,6 @@ Key | Type | Description
 `radii` | Array or Object | Values for `borderRadius` props
 `opacity` | Array or Object | Values for `opacity` props
 
-Additionally, each Rebass component can be themed with
-CSS objects and added to the theme with a key corresponding to its name.
-
-```js
-// example theme
-const theme = {
-  Heading: {
-    fontFamily: '"Roboto Condensed", sans-serif',
-    lineHeight: 1.25
-  }
-}
-```
 
 ## Button & Card Variants
 

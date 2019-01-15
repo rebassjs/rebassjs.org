@@ -1,11 +1,10 @@
 import React from 'react'
-import { Flex, Box, Link } from 'rebass'
-import styled, { ThemeProvider } from 'styled-components'
-import { graphql, StaticQuery, Link as GatsbyLink } from 'gatsby'
+import { Flex, Box, Text, Link } from 'rebass'
+import { ThemeProvider } from 'styled-components'
+import { graphql, StaticQuery } from 'gatsby'
 import { Location } from '@reach/router'
 import Sidebar from 'react-sidebar'
 import NavLink from '../NavLink'
-import theme from '../theme'
 
 const query = graphql`
   query SidebarQuery {
@@ -52,27 +51,37 @@ class SidebarState extends React.Component {
   }
 }
 
+const removeSlash = str => str.replace(/\/$/, '')
+
 const Pagination = ({
   navigation = []
 }) =>
 <Location
   children={({ location }) => {
-    const i = navigation.findIndex(n => n.href === location.pathname)
+    const i = navigation.findIndex(n => n.href === removeSlash(location.pathname))
     const previous = navigation[i - 1]
     const next = navigation[i + 1]
     return (
-      <Flex>
+      <Flex py={4}>
         {previous && (
           <NavLink to={previous.href}>
-            Previous
-            {previous.text}
+            <Text fontSize={0}>
+              Previous
+            </Text>
+            <Text fontSize={3}>
+              {previous.text}
+            </Text>
           </NavLink>
         )}
         <Box mx='auto' />
         {next && (
           <NavLink to={next.href}>
-            Next
-            {next.text}
+            <Text fontSize={0}>
+              Next
+            </Text>
+            <Text fontSize={3}>
+              {next.text}
+            </Text>
           </NavLink>
         )}
       </Flex>

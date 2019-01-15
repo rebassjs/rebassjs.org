@@ -1,6 +1,5 @@
 import React from 'react'
 import { graphql, Link as GLink } from 'gatsby'
-import styled from 'styled-components'
 import {
   Flex,
   Box,
@@ -42,23 +41,39 @@ export const name = 'Rebass'
 const badges = (
   <Flex
     mt={3}
+    flexWrap='wrap'
     alignItems='center'
     width={1}>
     <Link
       mr={2}
-      py={2}
-      href='https://travis-ci.org/rebassjs/rebass'>
+      py={1}
+      href='https://github.com/rebassjs/rebass'>
       <Image
-        src='https://img.shields.io/travis/rebassjs/rebass/master.svg'
+        src='https://flat.badgen.net/github/stars/rebassjs/rebass?color=33e'
       />
     </Link>
     <Link
-      ml={2}
-      mr={3}
-      py={2}
-      href='https://github.com/rebassjs/rebass'>
+      mr={2}
+      py={1}
+      href='https://travis-ci.org/rebassjs/rebass'>
       <Image
-        src='https://img.shields.io/github/stars/rebassjs/rebass.svg?style=social&label=Star'
+        src='https://flat.badgen.net/travis/rebassjs/rebass/master?color=33e'
+      />
+    </Link>
+    <Link
+      mr={2}
+      py={1}
+      href='https://npmjs.com/package/rebass'>
+      <Image
+        src='https://flat.badgen.net/npm/dw/rebass?color=33e'
+      />
+    </Link>
+    <Link
+      mr={2}
+      py={1}
+      href='https://codecov.io/github/rebassjs/rebass'>
+      <Image
+        src='https://flat.badgen.net/codecov/c/github/rebassjs/rebass?color=33e'
       />
     </Link>
   </Flex>
@@ -87,6 +102,7 @@ export default props =>
           fontWeight='bold'>
           {props.data.site.siteMetadata.description}
         </Text>
+        {badges}
         <Flex
           my={3}
           flexWrap='wrap'

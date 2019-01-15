@@ -7,6 +7,7 @@ import {
   LiveError,
 } from 'react-live'
 import * as Rebass from 'rebass'
+import { Box } from 'rebass'
 
 const scope = {
   ...Rebass,
@@ -40,15 +41,17 @@ const Err = styled(LiveError)({
 export default ({
   ...props
 }) =>
-  <LiveProvider
-    {...props}
-    style={{
-      border: '1px solid #f3f3f9',
-      borderRadius: 2,
-    }}
-    mountStylesheet={false}
-    scope={scope}>
-    <Preview />
-    <Editor />
-    <Err />
-  </LiveProvider>
+  <Box my={4}>
+    <LiveProvider
+      {...props}
+      style={{
+        border: '1px solid #f3f3f9',
+        borderRadius: 2,
+      }}
+      mountStylesheet={false}
+      scope={scope}>
+      <Preview />
+      <Editor />
+      <Err />
+    </LiveProvider>
+  </Box>

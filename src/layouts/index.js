@@ -31,6 +31,16 @@ const Pre = styled.pre({
   backgroundColor: '#f6f6ff',
 })
 
+const inlineCode = styled.code({
+  fontFamily: '"Roboto Mono", Menlo, monospace',
+  fontSize: '14px',
+  paddingLeft: '2px',
+  paddingRight: '2px',
+  borderRadius: '2px',
+  color: '#c0c',
+  backgroundColor: '#f6f6ff',
+})
+
 const code = ({
   className,
   ...props
@@ -74,6 +84,37 @@ const withLink = ({ as, ...defaultProps }) => ({
   )
 }
 
+const table = styled.table({
+  width: '100%',
+  marginTop: '32px',
+  marginBottom: '32px',
+  borderCollapse: 'separate',
+  borderSpacing: 0,
+  borderColor: theme.colors.lightgray,
+  '& th': {
+    textAlign: 'left',
+    verticalAlign: 'bottom',
+    paddingTop: '4px',
+    paddingBottom: '4px',
+    paddingRight: '4px',
+    paddingLeft: 0,
+    borderColor: 'inherit',
+    borderBottomWidth: '2px',
+    borderBottomStyle: 'solid'
+  },
+  '& td': {
+    textAlign: 'left',
+    verticalAlign: 'top',
+    paddingTop: '4px',
+    paddingBottom: '4px',
+    paddingRight: '4px',
+    paddingLeft: 0,
+    borderColor: 'inherit',
+    borderBottomWidth: '1px',
+    borderBottomStyle: 'solid'
+  },
+})
+
 const components = {
   h1: withLink({ as: 'h1', fontSize: 6, mt: 4, mb: 2 }),
   h2: withLink({ as: 'h2', fontSize: 5, mt: 4, mb: 2 }),
@@ -83,25 +124,10 @@ const components = {
   h6: withLink({ as: 'h6', fontSize: 1, mt: 4, mb: 2 }),
   a,
   pre: props => props.children,
+  inlineCode,
   code,
+  table,
 }
-
-const ga = [
-  <script
-    key='ga1'
-    async
-    src='https://www.googletagmanager.com/gtag/js?id=UA-4603832-13'
-  />,
-  <script
-    key='ga2'
-    dangerouslySetInnerHTML={{
-      __html: `window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'UA-4603832-13');`
-    }}
-  />
-]
 
 export default props =>
   <ThemeProvider theme={theme}>
