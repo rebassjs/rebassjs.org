@@ -1,6 +1,4 @@
 
-export const name = 'Theming'
-
 # Theming
 
 To apply themes to Rebass components, add a [ThemeProvider][] component to the root of your application and pass a `theme` object as a prop.
@@ -68,19 +66,6 @@ Key | Type | Description
 `opacity` | Array or Object | Values for `opacity` props
 
 By default arrays of numbers are interpreted as `px`, other unit of measurements can be specified by using an array of strings instead, e.x. `['768px', '992px', '1200px']`.
-
-Additionally, each Rebass component can be themed with
-CSS objects and added to the theme with a key corresponding to its name.
-
-```js
-// example theme
-const theme = {
-  Heading: {
-    fontFamily: '"Roboto Condensed", sans-serif',
-    lineHeight: 1.25
-  }
-}
-```
 
 ## Button & Card Variants
 

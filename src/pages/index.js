@@ -1,10 +1,5 @@
 import React from 'react'
-import styled from 'styled-components'
-import {
-  Link as GoLink,
-  NavLink,
-  LiveCode
-} from 'mdx-go/styled-components'
+import { graphql, Link as GLink } from 'gatsby'
 import {
   Flex,
   Box,
@@ -14,42 +9,76 @@ import {
   Image,
   Link,
 } from 'rebass'
-import Logo from './Logo'
-import {
-  docs,
-  github,
-  install,
-  Container,
-  Pre,
-  features,
-  quotes,
-  demo,
-} from './components'
 import pkg from 'rebass/package.json'
+import Logo from '../Logo'
+import LiveCode from '../LiveCode'
+import NavLink from '../NavLink'
+import { Pre } from '../layouts'
 
-export const name = 'Rebass'
-export { Root } from './components'
+const Container = props =>
+  <Box
+    {...props}
+    px={4}
+    mx='auto'
+    css={{
+      maxWidth: '1024px'
+    }}
+  />
+
+const demo = `<Flex
+  px={4}
+  py={4}
+  alignItems='center'>
+  <Heading
+    fontSize={[ 4, 5 ]}
+    color='blue'>
+    Live Demo
+  </Heading>
+  <Box mx='auto' />
+  <Button>
+    Beep
+  </Button>
+  <Button ml={2}>
+    Boop
+  </Button>
+</Flex>`
 
 const badges = (
   <Flex
     mt={3}
+    flexWrap='wrap'
     alignItems='center'
     width={1}>
     <Link
       mr={2}
-      py={2}
-      href='https://travis-ci.org/rebassjs/rebass'>
+      py={1}
+      href='https://github.com/rebassjs/rebass'>
       <Image
-        src='https://img.shields.io/travis/rebassjs/rebass/master.svg'
+        src='https://flat.badgen.net/github/stars/rebassjs/rebass?color=33e'
       />
     </Link>
     <Link
-      ml={2}
-      mr={3}
-      py={2}
-      href='https://github.com/rebassjs/rebass'>
+      mr={2}
+      py={1}
+      href='https://travis-ci.org/rebassjs/rebass'>
       <Image
-        src='https://img.shields.io/github/stars/rebassjs/rebass.svg?style=social&label=Star'
+        src='https://flat.badgen.net/travis/rebassjs/rebass/master?color=33e'
+      />
+    </Link>
+    <Link
+      mr={2}
+      py={1}
+      href='https://npmjs.com/package/rebass'>
+      <Image
+        src='https://flat.badgen.net/npm/dw/rebass?color=33e'
+      />
+    </Link>
+    <Link
+      mr={2}
+      py={1}
+      href='https://codecov.io/github/rebassjs/rebass'>
+      <Image
+        src='https://flat.badgen.net/codecov/c/github/rebassjs/rebass?color=33e'
       />
     </Link>
   </Flex>
@@ -76,15 +105,15 @@ export default props =>
           my={3}
           fontSize={3}
           fontWeight='bold'>
-          React primitive UI components built with styled-system
+          {props.data.site.siteMetadata.description}
         </Text>
         <Flex
           my={3}
           flexWrap='wrap'
           alignItems='center'>
           <Button
-            as={GoLink}
-            href={docs}
+            as={GLink}
+            to='/getting-started'
             variant='primary'
             children='Docs'
           />
@@ -95,14 +124,23 @@ export default props =>
             children='GitHub'
             variant='outline'
           />
-          <Pre color='magenta' mx={3} my={3}>{install}</Pre>
+          <Pre
+            color='magenta'
+            bg='transparent'
+            mx={3}
+            my={3}>
+            {props.data.site.siteMetadata.install}
+          </Pre>
         </Flex>
-        <Pre>v{pkg.version}</Pre>
+        <Pre p={0} bg='transparent' color='inherit'>
+          v{pkg.version}
+        </Pre>
       </Container>
     </Flex>
     <Container>
+      {badges}
       <Flex flexWrap='wrap' mx={-3} py={5}>
-        {features.map(feat => (
+        {props.data.site.siteMetadata.features.map(feat => (
           <Box
             key={feat}
             width={[ 1, null, 1/2 ]}
@@ -117,7 +155,7 @@ export default props =>
         ))}
       </Flex>
       <Flex flexWrap='wrap' mx={-3} py={5}>
-        {quotes.map(({ text, name, href }) => (
+        {props.data.site.siteMetadata.quotes.map(({ text, name, href }) => (
           <Box
             key={name}
             width={[ 1, null, 1/2 ]}
@@ -142,8 +180,8 @@ export default props =>
         <Heading fontSize={5}>Get Started</Heading>
         <Box mx='auto' />
         <Button
-          as={GoLink}
-          href={docs}
+          as={GLink}
+          to='/getting-started'
           py={3}
           variant='primary'>
           Read the Docs
@@ -154,8 +192,10 @@ export default props =>
       <Container>
         <Flex mx={-3} flexWrap='wrap'>
           <Box width={[ 1/2, null, 1/4 ]}>
-            <NavLink href={docs}>Docs</NavLink>
-            <NavLink href={github}>GitHub</NavLink>
+            <NavLink href='/getting-started'>Docs</NavLink>
+            <NavLink href={props.data.site.siteMetadata.github}>
+              GitHub
+            </NavLink>
             <NavLink href='https://rebass-v2.now.sh'>v2 Docs</NavLink>
           </Box>
           <Box width={[ 1/2, null, 1/4 ]}>
@@ -167,3 +207,21 @@ export default props =>
       </Container>
     </Box>
   </React.Fragment>
+
+export const query = graphql`
+  query HomePage {
+    site {
+      siteMetadata {
+        description
+        install
+        github
+        features
+        quotes {
+          text
+          name
+          href
+        }
+      }
+    }
+  }
+`

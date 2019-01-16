@@ -1,6 +1,4 @@
 
-export const name = 'Extending'
-
 # Extending
 
 Rebass components are great to use as base components that can be extended for various purposes in your design system.
@@ -21,6 +19,8 @@ const Container = props =>
     }}
   />
 ```
+
+Using the `css` prop requires the use of [babel-plugin-styled-components][]
 
 ```js
 // styled-components based extension
@@ -202,3 +202,5 @@ const Toolbar = props =>
     {...props}
   />
 ```
+
+[babel-plugin-styled-components]: https://www.styled-components.com/docs/api#css-prop

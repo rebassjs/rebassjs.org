@@ -1,6 +1,4 @@
 
-export const name = 'Advanced'
-
 # Advanced
 
 ## Server-Side Rendering
