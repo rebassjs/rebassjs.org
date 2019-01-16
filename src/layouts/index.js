@@ -18,18 +18,21 @@ const Style = createGlobalStyle({
   }
 })
 
-export const Pre = styled.pre({
+export const Pre = styled(Box)({
   fontFamily: '"Roboto Mono", Menlo, monospace',
   fontSize: '14px',
-  padding: '1em',
-  marginTop: '32px',
-  marginBottom: '32px',
   outline: 'none',
   overflowX: 'auto',
   borderRadius: '2px',
-  color: '#c0c',
-  backgroundColor: '#f6f6ff',
 })
+
+Pre.defaultProps = {
+  as: 'pre',
+  p: '1em',
+  my: 4,
+  color: '#c0c',
+  bg: '#f6f6ff',
+}
 
 const inlineCode = styled.code({
   fontFamily: '"Roboto Mono", Menlo, monospace',

@@ -107,7 +107,6 @@ export default props =>
           fontWeight='bold'>
           {props.data.site.siteMetadata.description}
         </Text>
-        {badges}
         <Flex
           my={3}
           flexWrap='wrap'
@@ -125,12 +124,21 @@ export default props =>
             children='GitHub'
             variant='outline'
           />
-          <Pre color='magenta' mx={3} my={3}>{props.data.site.siteMetadata.install}</Pre>
+          <Pre
+            color='magenta'
+            bg='transparent'
+            mx={3}
+            my={3}>
+            {props.data.site.siteMetadata.install}
+          </Pre>
         </Flex>
-        <Pre>v{pkg.version}</Pre>
+        <Pre p={0} bg='transparent' color='inherit'>
+          v{pkg.version}
+        </Pre>
       </Container>
     </Flex>
     <Container>
+      {badges}
       <Flex flexWrap='wrap' mx={-3} py={5}>
         {props.data.site.siteMetadata.features.map(feat => (
           <Box

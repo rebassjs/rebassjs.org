@@ -100,6 +100,9 @@ const Pagination = ({
 />
 
 const MenuButton = styled.button({
+  position: 'fixed',
+  top: 0,
+  left: 0,
   appearance: 'none',
   padding: '8px',
   margin: 0,
