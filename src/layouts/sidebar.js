@@ -43,6 +43,7 @@ class SidebarState extends React.Component {
 
   componentDidMount () {
     this.media = window.matchMedia(breakpoint)
+    this.handleMedia()
     this.media.addListener(this.handleMedia)
   }
 
