@@ -25,9 +25,9 @@
     "react-dom": "^16.7.0",
     "react-helmet": "^5.2.0",
     "react-live": "^1.12.0",
-    "react-sidebar": "^3.0.2",
     "rebass": "^3.0.0",
     "reline": "^1.0.0-beta.3",
+    "sidepane": "^1.0.0-4",
     "styled-components": "^4.1.3"
   },
   "devDependencies": {
