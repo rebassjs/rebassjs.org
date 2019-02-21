@@ -11,9 +11,11 @@ const query = graphql`
   query SidebarQuery {
     site {
       siteMetadata {
-        navigation {
-          text
-          href
+        rebassTheme {
+          navigation {
+            text
+            href
+          }
         }
       }
     }
@@ -89,42 +91,45 @@ const MenuButton = styled.button({
 export default props =>
   <StaticQuery
     query={query}
-    render={({ site }) => (
-      <Flex>
-        <Sidepane>
+    render={({ site }) => {
+      const { navigation } = site.siteMetadata.rebassTheme
+      return (
+        <Flex>
+          <Sidepane>
+            <Box
+              width={[ 256 ]}
+              px={2}
+              py={3}
+              bg='white'
+              style={{
+                minHeight: '100vh'
+              }}>
+              {navigation.map(({ text, href }) => (
+                <NavLink
+                  key={href}
+                  to={href}
+                  children={text}
+                />
+              ))}
+              <Box my={4} />
+              <NavLink href='https://github.com/rebassjs/rebass' children='GitHub' />
+              <NavLink href='https://jxnblk.com' children='Made by Jxnblk' />
+            </Box>
+          </Sidepane>
           <Box
-            width={[ 256 ]}
-            px={2}
-            py={3}
-            bg='white'
+            {...props}
+            mx='auto'
+            px={4}
+            py={4}
+            width={1}
             style={{
-              minHeight: '100vh'
+              maxWidth: 768,
+              minHeight: '100vh',
             }}>
-            {site.siteMetadata.navigation.map(({ text, href }) => (
-              <NavLink
-                key={href}
-                to={href}
-                children={text}
-              />
-            ))}
-            <Box my={4} />
-            <NavLink href='https://github.com/rebassjs/rebass' children='GitHub' />
-            <NavLink href='https://jxnblk.com' children='Made by Jxnblk' />
+            {props.children}
+            <Pagination navigation={navigation} />
           </Box>
-        </Sidepane>
-        <Box
-          {...props}
-          mx='auto'
-          px={4}
-          py={4}
-          width={1}
-          style={{
-            maxWidth: 768,
-            minHeight: '100vh',
-          }}>
-          {props.children}
-          <Pagination {...site.siteMetadata} />
-        </Box>
-      </Flex>
-    )}
+        </Flex>
+      )
+    }}
   />

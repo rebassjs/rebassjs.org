@@ -9,7 +9,7 @@ import {
   Image,
   Link,
 } from 'rebass'
-import { NavLink, Pre, LiveCode } from 'gatsby-theme-rebass-docs'
+import { NavLink, Pre, LiveCode } from '@rebass/gatsby-theme-docs'
 import pkg from 'rebass/package.json'
 import Logo from '../Logo'
 

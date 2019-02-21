@@ -2,7 +2,28 @@ const path = require('path')
 
 module.exports = {
   __experimentalThemes: [
-    'gatsby-theme-rebass-docs',
+    {
+      resolve: '@rebass/gatsby-theme-docs',
+      options: {
+        navigation: [
+          { text: 'Rebass', href: '/' },
+          { text: 'Getting Started', href: '/getting-started' },
+          { text: 'Props', href: '/props' },
+          { text: 'Extending', href: '/extending' },
+          { text: 'Theming', href: '/theming' },
+          { text: 'Box', href: '/Box' },
+          { text: 'Flex', href: '/Flex' },
+          { text: 'Text', href: '/Text' },
+          { text: 'Heading', href: '/Heading' },
+          { text: 'Button', href: '/Button' },
+          { text: 'Link', href: '/Link' },
+          { text: 'Image', href: '/Image' },
+          { text: 'Card', href: '/Card' },
+          { text: 'Advanced', href: '/advanced' },
+          { text: 'Recipes', href: '/recipes' },
+        ],
+      },
+    },
   ],
   siteMetadata: {
     title: 'Rebass',
@@ -12,23 +33,6 @@ module.exports = {
     docs: '/getting-started',
     install: 'npm i rebass',
     github: 'https://github.com/rebassjs/rebass',
-    navigation: [
-      { text: 'Rebass', href: '/' },
-      { text: 'Getting Started', href: '/getting-started' },
-      { text: 'Props', href: '/props' },
-      { text: 'Extending', href: '/extending' },
-      { text: 'Theming', href: '/theming' },
-      { text: 'Box', href: '/Box' },
-      { text: 'Flex', href: '/Flex' },
-      { text: 'Text', href: '/Text' },
-      { text: 'Heading', href: '/Heading' },
-      { text: 'Button', href: '/Button' },
-      { text: 'Link', href: '/Link' },
-      { text: 'Image', href: '/Image' },
-      { text: 'Card', href: '/Card' },
-      { text: 'Advanced', href: '/advanced' },
-      { text: 'Recipes', href: '/recipes' },
-    ],
     features: [
       '8 foundational UI components',
       'Super small (~1KB)',

@@ -13,5 +13,11 @@
   "alias": [
     "rebassjs.org"
   ],
+  "routes": [
+    {
+      "src": "/",
+      "dest": "/www"
+    }
+  ],
   "public": true
 }

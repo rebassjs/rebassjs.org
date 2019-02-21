@@ -1,5 +1,5 @@
 {
-  "name": "gatsby-theme-rebass-docs",
+  "name": "@rebass/gatsby-theme-docs",
   "version": "1.0.0-0",
   "main": "index.js",
   "author": "Brent Jackson <jxnblk@gmail.com>",
