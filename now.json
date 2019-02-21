@@ -15,8 +15,8 @@
   ],
   "routes": [
     {
-      "src": "/",
-      "dest": "/www"
+      "src": "/(.*)",
+      "dest": "/www/$1"
     }
   ],
   "public": true
