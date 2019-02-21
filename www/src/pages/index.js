@@ -9,11 +9,9 @@ import {
   Image,
   Link,
 } from 'rebass'
+import { NavLink, Pre, LiveCode } from 'gatsby-theme-rebass-docs'
 import pkg from 'rebass/package.json'
 import Logo from '../Logo'
-import LiveCode from '../LiveCode'
-import NavLink from '../NavLink'
-import { Pre } from '../layouts'
 
 const Container = props =>
   <Box

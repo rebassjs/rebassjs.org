@@ -4,7 +4,7 @@ import styled, { ThemeProvider } from 'styled-components'
 import { graphql, StaticQuery } from 'gatsby'
 import { Location } from '@reach/router'
 import Sidepane from 'sidepane'
-import NavLink from '../NavLink'
+import NavLink from './NavLink'
 import { Burger } from 'reline'
 
 const query = graphql`

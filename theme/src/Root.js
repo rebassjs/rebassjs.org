@@ -7,8 +7,8 @@ import { Helmet } from 'react-helmet'
 import { Box, Heading, Link } from 'rebass'
 import Slugger from 'github-slugger'
 import isAbsoluteURL from 'is-absolute-url'
-import LiveCode from '../LiveCode'
-import theme from '../theme'
+import LiveCode from './LiveCode'
+import theme from './theme'
 
 const slugger = new Slugger()
 

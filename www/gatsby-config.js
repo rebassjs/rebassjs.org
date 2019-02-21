@@ -1,6 +1,9 @@
 const path = require('path')
 
 module.exports = {
+  __experimentalThemes: [
+    'gatsby-theme-rebass-docs',
+  ],
   siteMetadata: {
     title: 'Rebass',
     description: 'React primitive UI components built with styled-system',
@@ -60,22 +63,12 @@ module.exports = {
     ],
   },
   plugins: [
-    'gatsby-plugin-react-helmet',
     {
       resolve: 'gatsby-plugin-google-analytics',
       options: {
         trackingId: 'UA-4603832-13'
       }
     },
-    'gatsby-plugin-styled-components',
-    'gatsby-plugin-layout',
-    { resolve: 'gatsby-mdx',
-      options: {
-        extensions: [ '.mdx', '.md' ],
-        defaultLayouts: {
-          default: require.resolve('./src/layouts/sidebar.js')
-        }
-      }
-    }
+
   ],
 }
