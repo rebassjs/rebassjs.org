@@ -23,7 +23,15 @@ module.exports = options => {
             default: require.resolve('./src/Sidebar.js')
           }
         }
-      }
+      },
+      {
+        resolve: 'gatsby-plugin-compile-es6-packages',
+        options: {
+          modules: [
+            '@rebass/gatsby-theme-docs',
+          ]
+        }
+      },
     ],
   }
 }

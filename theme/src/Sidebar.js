@@ -1,7 +1,7 @@
 import React from 'react'
 import { Flex, Box, Text, Link } from 'rebass'
 import styled, { ThemeProvider } from 'styled-components'
-import { graphql, StaticQuery } from 'gatsby'
+import { graphql, useStaticQuery } from 'gatsby'
 import { Location } from '@reach/router'
 import Sidepane from 'sidepane'
 import NavLink from './NavLink'
@@ -88,48 +88,46 @@ const MenuButton = styled.button({
   }
 })
 
-export default props =>
-  <StaticQuery
-    query={query}
-    render={({ site }) => {
-      const { navigation } = site.siteMetadata.rebassTheme
-      return (
-        <Flex>
-          <Sidepane>
-            <Box
-              width={[ 256 ]}
-              px={2}
-              py={3}
-              bg='white'
-              style={{
-                minHeight: '100vh'
-              }}>
-              {navigation.map(({ text, href }) => (
-                <NavLink
-                  key={href}
-                  to={href}
-                  children={text}
-                />
-              ))}
-              <Box my={4} />
-              <NavLink href='https://github.com/rebassjs/rebass' children='GitHub' />
-              <NavLink href='https://jxnblk.com' children='Made by Jxnblk' />
-            </Box>
-          </Sidepane>
-          <Box
-            {...props}
-            mx='auto'
-            px={4}
-            py={4}
-            width={1}
-            style={{
-              maxWidth: 768,
-              minHeight: '100vh',
-            }}>
-            {props.children}
-            <Pagination navigation={navigation} />
-          </Box>
-        </Flex>
-      )
-    }}
-  />
+export default props => {
+  const { site } = useStaticQuery(query)
+  const { navigation } = site.siteMetadata.rebassTheme
+
+  return (
+    <Flex>
+      <Sidepane>
+        <Box
+          width={[ 256 ]}
+          px={2}
+          py={3}
+          bg='white'
+          style={{
+            minHeight: '100vh'
+          }}>
+          {navigation.map(({ text, href }) => (
+            <NavLink
+              key={href}
+              to={href}
+              children={text}
+            />
+          ))}
+          <Box my={4} />
+          <NavLink href='https://github.com/rebassjs/rebass' children='GitHub' />
+          <NavLink href='https://jxnblk.com' children='Made by Jxnblk' />
+        </Box>
+      </Sidepane>
+      <Box
+        {...props}
+        mx='auto'
+        px={4}
+        py={4}
+        width={1}
+        style={{
+          maxWidth: 768,
+          minHeight: '100vh',
+        }}>
+        {props.children}
+        <Pagination navigation={navigation} />
+      </Box>
+    </Flex>
+  )
+}
