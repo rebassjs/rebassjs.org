@@ -1,10 +1,9 @@
 module.exports = options => {
-  const { navigation } = options
+  const { navigation = [] } = options
+
   return {
     siteMetadata: {
-      rebassTheme: {
-        navigation
-      }
+      navigation
     },
     plugins: [
       'gatsby-plugin-react-helmet',

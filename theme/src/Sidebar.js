@@ -11,11 +11,9 @@ const query = graphql`
   query SidebarQuery {
     site {
       siteMetadata {
-        rebassTheme {
-          navigation {
-            text
-            href
-          }
+        navigation {
+          text
+          href
         }
       }
     }
@@ -90,7 +88,7 @@ const MenuButton = styled.button({
 
 export default props => {
   const { site } = useStaticQuery(query)
-  const { navigation } = site.siteMetadata.rebassTheme
+  const { navigation } = site.siteMetadata
 
   return (
     <Flex>
