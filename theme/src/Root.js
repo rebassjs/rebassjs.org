@@ -55,7 +55,7 @@ const code = ({
   <Pre className={className} {...props} />
 )
 
-const a = ({ href, ...props }) => isAbsoluteURL(href)
+const a = ({ href, ...props }) => isAbsoluteURL(href) || /^#/.test(href)
   ? <Link href={href} {...props} />
   : <Link as={GLink} to={href} {...props} />
 
