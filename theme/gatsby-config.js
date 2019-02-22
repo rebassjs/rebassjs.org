@@ -13,7 +13,7 @@ module.exports = options => {
         options: {
           extensions: [ '.mdx', '.md' ],
           defaultLayouts: {
-            default: require.resolve('./src/Sidebar.js')
+            docs: require.resolve('./src/Sidebar.js')
           }
         }
       },
