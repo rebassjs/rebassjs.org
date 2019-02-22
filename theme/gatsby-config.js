@@ -9,12 +9,6 @@ module.exports = options => {
       'gatsby-plugin-react-helmet',
       'gatsby-plugin-styled-components',
       {
-        resolve: 'gatsby-plugin-layout',
-        options: {
-          component: require.resolve('./src/Root.js'),
-        }
-      },
-      {
         resolve: 'gatsby-mdx',
         options: {
           extensions: [ '.mdx', '.md' ],
