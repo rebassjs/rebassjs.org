@@ -120,6 +120,7 @@ export default props => {
         py={4}
         width={1}
         style={{
+          minWidth: 0,
           maxWidth: 768,
           minHeight: '100vh',
         }}>
