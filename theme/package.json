@@ -1,6 +1,6 @@
 {
   "name": "@rebass/gatsby-theme-docs",
-  "version": "1.0.0-4",
+  "version": "1.0.0-5",
   "main": "index.js",
   "author": "Brent Jackson <jxnblk@gmail.com>",
   "license": "MIT",
