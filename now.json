@@ -3,7 +3,7 @@
   "name": "Rebass",
   "builds": [
     {
-      "src": "package.json",
+      "src": "www/package.json",
       "use": "@now/static-build",
       "config": {
         "distDir": "public"
@@ -12,6 +12,12 @@
   ],
   "alias": [
     "rebassjs.org"
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/www/$1"
+    }
   ],
   "public": true
 }

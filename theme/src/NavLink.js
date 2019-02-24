@@ -4,6 +4,7 @@ import { themeGet } from 'styled-system'
 import { Link } from 'rebass'
 import { Link as GLink } from 'gatsby'
 
+
 const NavLink = styled(Link)({
   display: 'block',
   textDecoration: 'none',
@@ -21,9 +22,9 @@ NavLink.defaultProps = {
   color: 'inherit',
 }
 
-const getProps = ({ isCurrent, className }) => isCurrent ? {
-  className: className + ' active'
-} : null
+// const getProps = ({ isCurrent, className }) => isCurrent ? {
+//   className: className + ' active'
+// } : null
 
 export default props =>
   <NavLink
