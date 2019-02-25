@@ -3,6 +3,7 @@
 
 ```sh
 npm i rebass
+yarn add rebass
 ```
 
 Import components directly from Rebass and use them to build out your UI.
