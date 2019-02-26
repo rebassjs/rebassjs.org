@@ -15,6 +15,7 @@ const query = graphql`
           text
           href
         }
+        github
       }
     }
   }
@@ -88,7 +89,7 @@ const MenuButton = styled.button({
 
 export default props => {
   const { site } = useStaticQuery(query)
-  const { navigation } = site.siteMetadata
+  const { navigation, github } = site.siteMetadata
 
   return (
     <Flex>
@@ -109,7 +110,7 @@ export default props => {
             />
           ))}
           <Box my={4} />
-          <NavLink href='https://github.com/rebassjs/rebass' children='GitHub' />
+          {github && <NavLink href={github} children='GitHub' />}
           <NavLink href='https://jxnblk.com' children='Made by Jxnblk' />
         </Box>
       </Sidepane>

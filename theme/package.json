@@ -26,8 +26,8 @@
     "react-dom": "^16.8.2"
   },
   "peerDependencies": {
-    "@mdx-js/mdx": "^0.17.5",
-    "@mdx-js/tag": "^0.17.5",
+    "@mdx-js/mdx": "^0.18.0",
+    "@mdx-js/tag": "^0.18.0",
     "gatsby": "^2.1.13",
     "react": "^16.8.2",
     "react-dom": "^16.8.2"

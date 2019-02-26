@@ -7,5 +7,9 @@
   "workspaces": [
     "www",
     "theme"
-  ]
+  ],
+  "dependencies": {
+    "@mdx-js/mdx": "^0.18.0",
+    "@mdx-js/tag": "^0.18.0"
+  }
 }
