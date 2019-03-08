@@ -12,9 +12,6 @@ module.exports = options => {
         resolve: 'gatsby-mdx',
         options: {
           extensions: [ '.mdx', '.md' ],
-          defaultLayouts: {
-            docs: require.resolve('./src/Sidebar.js')
-          }
         }
       },
       {

@@ -1,11 +1,10 @@
 import React from 'react'
-import { Flex, Box, Text, Link } from 'rebass'
-import styled, { ThemeProvider } from 'styled-components'
+import { Flex, Box, Text } from 'rebass'
+import styled from 'styled-components'
 import { graphql, useStaticQuery } from 'gatsby'
 import { Location } from '@reach/router'
 import Sidepane from 'sidepane'
 import NavLink from './NavLink'
-import { Burger } from 'reline'
 
 const query = graphql`
   query SidebarQuery {
@@ -22,10 +21,6 @@ const query = graphql`
 `
 
 const breakpoint = 'screen and (min-width:40em)'
-
-const initialMQ = typeof window !== 'undefined'
-  ? window.matchMedia(breakpoint)
-  : { matches: false }
 
 const removeSlash = str => str.replace(/\/$/, '')
 
@@ -67,25 +62,6 @@ const Pagination = ({
     )
   }}
 />
-
-const MenuButton = styled.button({
-  position: 'fixed',
-  top: 0,
-  left: 0,
-  appearance: 'none',
-  padding: '8px',
-  margin: 0,
-  fontFamily: 'inherit',
-  fontSize: 'inherit',
-  color: 'inherit',
-  backgroundColor: 'transparent',
-  border: 0,
-  outline: 'none',
-  '&:focus': {
-    color: 'magenta',
-    outline: '1px solid magenta'
-  }
-})
 
 export default props => {
   const { site } = useStaticQuery(query)
