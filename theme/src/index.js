@@ -1,6 +1,7 @@
 import React from 'react'
 import Root from './Root'
 import Sidebar from './Sidebar'
+import './styles.css'
 
 export const wrapPageElement = ({ element, props }, opts) => {
   const isMDX = !!element.type.isMDXComponent
