@@ -151,3 +151,4 @@ export const Text = styled('div')([],
   fontWeight,
 )
 
+export default () => false
