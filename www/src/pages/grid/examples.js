@@ -312,3 +312,5 @@ export const examples = [
   Movement,
   Offset,
 ]
+
+export default () => false
