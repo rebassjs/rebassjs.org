@@ -2,6 +2,7 @@
   "private": true,
   "scripts": {
     "start": "yarn workspace rebassjs.org start",
+    "build": "yarn workspace rebassjs.org build",
     "test": "echo \"hello\""
   },
   "workspaces": [
