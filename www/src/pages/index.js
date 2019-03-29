@@ -8,7 +8,7 @@ import {
   Button,
   Image,
   Link,
-} from 'rebass'
+} from '@rebass/emotion'
 import { NavLink, Pre, LiveCode } from '@rebass/gatsby-theme-docs'
 import pkg from 'rebass/package.json'
 import Logo from '../Logo'

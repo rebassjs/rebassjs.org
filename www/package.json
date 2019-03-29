@@ -6,7 +6,7 @@
     "start": "gatsby develop",
     "build": "gatsby build",
     "now-build": "npm run build",
-    "svg": "scrs src/Logo.js --svg > static/logo.svg",
+    "svg": "npx scrs src/Logo.js --svg > static/logo.svg",
     "card": "npx repng src/twitter-card.js -w 1024 -h 512 -d static -f card.png",
     "icon": "npx repng src/Icon.js -w 512 -h 512 -d static -f icon.png"
   },
@@ -21,9 +21,7 @@
     "gatsby-plugin-google-analytics": "^2.0.8",
     "gatsby-plugin-layout": "^1.0.12",
     "react": "^16.7.0",
-    "react-dom": "^16.7.0"
-  },
-  "devDependencies": {
-    "scrs": "^1.1.0"
+    "react-dom": "^16.7.0",
+    "rebass": "^3.1.0"
   }
 }

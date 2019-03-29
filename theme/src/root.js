@@ -1,25 +1,30 @@
 // root layout
 import React from 'react'
-import { ThemeProvider, createGlobalStyle } from 'styled-components'
+import { Global } from '@emotion/core'
+import { ThemeProvider } from 'emotion-theming'
 import { MDXProvider } from '@mdx-js/tag'
 import components from './components'
 import theme from './theme'
 
-const Style = createGlobalStyle({
-  '*': {
-    boxSizing: 'border-box',
-  },
-  body: {
-    margin: 0,
-    fontFamily: 'system-ui, sans-serif',
-    lineHeight: 1.5,
-  }
-})
+const style = (
+  <Global
+    styles={{
+      '*': {
+        boxSizing: 'border-box',
+      },
+      body: {
+        margin: 0,
+        fontFamily: 'system-ui, sans-serif',
+        lineHeight: 1.5,
+      }
+    }}
+  />
+)
 
 export default props =>
   <ThemeProvider theme={theme}>
     <MDXProvider components={components}>
-      <Style />
+      {style}
       {props.children}
     </MDXProvider>
   </ThemeProvider>

@@ -1,13 +1,13 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled from '@emotion/styled'
 import {
   LiveProvider,
   LivePreview,
   LiveEditor,
   LiveError,
 } from 'react-live'
-import * as Rebass from 'rebass'
-import { Box } from 'rebass'
+import * as Rebass from '@rebass/emotion'
+import { Box } from '@rebass/emotion'
 
 const CSSBox = styled(Box)(props => props.css)
 

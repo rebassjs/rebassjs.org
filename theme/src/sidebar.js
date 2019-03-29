@@ -1,5 +1,5 @@
 import React from 'react'
-import { Flex, Box, Text } from 'rebass'
+import { Flex, Box, Text } from '@rebass/emotion'
 import { Location } from '@reach/router'
 import Sidepane from 'sidepane'
 import NavLink from './nav-link'

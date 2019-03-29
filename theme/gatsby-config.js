@@ -12,7 +12,7 @@ module.exports = options => {
     },
     plugins: [
       'gatsby-plugin-react-helmet',
-      'gatsby-plugin-styled-components',
+      'gatsby-plugin-emotion',
       {
         resolve: 'gatsby-mdx',
         options: {

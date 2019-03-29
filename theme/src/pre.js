@@ -1,5 +1,5 @@
-import styled from 'styled-components'
-import { Box } from 'rebass'
+import styled from '@emotion/styled'
+import { Box } from '@rebass/emotion'
 
 export const Pre = styled(Box)({
   fontFamily: '"Roboto Mono", Menlo, monospace',

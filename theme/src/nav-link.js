@@ -1,7 +1,7 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled from '@emotion/styled'
 import { themeGet } from 'styled-system'
-import { Link } from 'rebass'
+import { Link } from '@rebass/emotion'
 import { Link as GLink } from 'gatsby'
 
 

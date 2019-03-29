@@ -5,6 +5,8 @@
 
 Rebass works with server-side rendering in both styled-components and emotion.
 
+Emotion requires no additional setup for server-side rendering.
+
 ### Styled Components
 
 ```js
@@ -28,19 +30,3 @@ module.exports = (req, res) => {
 
 Read more in the [styled-components docs](https://www.styled-components.com/docs/advanced#server-side-rendering).
 
-### Emotion
-
-```js
-const React = require('react')
-const { renderToString } = require('react-dom/server')
-const { renderStylesToString } = require('emotion-server')
-const App = require('./App')
-
-const html = renderStylesToString(
-  renderToString(
-    React.createElement(App)
-  )
-)
-```
-
-Read more in the [emotion docs](https://emotion.sh/docs/ssr)

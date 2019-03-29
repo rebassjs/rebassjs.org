@@ -1,9 +1,9 @@
 import React from 'react'
-import styled, { keyframes } from 'styled-components'
+import styled from '@emotion/styled'
+import { keyframes } from '@emotion/core'
 import { space, fontSize, fontWeight } from 'styled-system'
 import { Arrow } from 'reline'
 import { Helmet } from 'react-helmet'
-// import { Head } from 'mdx-go'
 
 export const colors = {
   cyan: '#0ff',

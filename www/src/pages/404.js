@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Flex, Text } from 'rebass'
+import { Box, Flex, Text } from '@rebass/emotion'
 import Logo from '../Logo'
 
 export default () =>

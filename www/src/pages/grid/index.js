@@ -6,7 +6,7 @@ import {
   LiveEditor,
   LivePreview
 } from 'react-live'
-import { Flex, Box } from '@rebass/grid'
+import { Flex, Box } from '@rebass/grid/emotion'
 import {
   Head,
   Color,
