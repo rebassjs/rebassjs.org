@@ -2,7 +2,6 @@ import React from 'react'
 import styled, { keyframes } from 'styled-components'
 import { space, fontSize, fontWeight } from 'styled-system'
 import { Arrow } from 'reline'
-import { Box, Flex } from '@rebass/grid'
 import { Helmet } from 'react-helmet'
 // import { Head } from 'mdx-go'
 

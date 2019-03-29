@@ -1,32 +1,14 @@
 import React from 'react'
-import Root from './Root'
-import Sidebar from './Sidebar'
-import './styles.css'
+import Root from './root'
 
-export const wrapPageElement = ({ element, props }, opts) => {
-  const isMDX = !!element.type.isMDXComponent
+export { default as Root } from './root'
+export { default as Sidebar } from './sidebar'
+export { default as LiveCode } from './live-code'
+export { default as Pre } from './pre'
+export { default as Link } from './link'
+export { default as NavLink } from './nav-link'
 
-  if (props.location.pathname === '/' || !isMDX) {
-    return (
-      <Root>
-        {element}
-      </Root>
-    )
-  }
-
-  return (
-    <Root>
-      <Sidebar>
-        {element}
-      </Sidebar>
-    </Root>
-  )
-}
-
-export {
-  default as Root,
-  Pre,
-} from './Root'
-export { default as Sidebar } from './Sidebar'
-export { default as LiveCode } from './LiveCode'
-export { default as NavLink } from './NavLink'
+export const wrapRootElement = ({ element, props }, opts) =>
+  <Root>
+    {element}
+  </Root>

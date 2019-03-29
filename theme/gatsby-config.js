@@ -1,3 +1,8 @@
+const remarkPlugins = [
+  require('remark-unwrap-images'),
+  require('remark-slug'),
+]
+
 module.exports = options => {
   const { navigation = [] } = options
 
@@ -12,6 +17,7 @@ module.exports = options => {
         resolve: 'gatsby-mdx',
         options: {
           extensions: [ '.mdx', '.md' ],
+          remarkPlugins,
         }
       },
       {

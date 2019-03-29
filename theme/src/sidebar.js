@@ -1,24 +1,9 @@
 import React from 'react'
 import { Flex, Box, Text } from 'rebass'
 import styled from 'styled-components'
-import { graphql, useStaticQuery } from 'gatsby'
 import { Location } from '@reach/router'
 import Sidepane from 'sidepane'
-import NavLink from './NavLink'
-
-const query = graphql`
-  query SidebarQuery {
-    site {
-      siteMetadata {
-        navigation {
-          text
-          href
-        }
-        github
-      }
-    }
-  }
-`
+import NavLink from './nav-link'
 
 const breakpoint = 'screen and (min-width:40em)'
 
@@ -63,10 +48,10 @@ const Pagination = ({
   }}
 />
 
-export default props => {
-  const { site } = useStaticQuery(query)
-  const { navigation, github } = site.siteMetadata
-
+export default ({
+  navigation,
+  ...props
+}) => {
   return (
     <Flex>
       <Sidepane>
@@ -85,9 +70,11 @@ export default props => {
               children={text}
             />
           ))}
+          {/*
           <Box my={4} />
           {github && <NavLink href={github} children='GitHub' />}
           <NavLink href='https://jxnblk.com' children='Made by Jxnblk' />
+          */}
         </Box>
       </Sidepane>
       <Box

@@ -1,7 +1,6 @@
 import React from 'react'
 import styled, { keyframes } from 'styled-components'
 import { width, height } from 'styled-system'
-import { theme } from 'rebass'
 
 const Svg = styled(({
   width,

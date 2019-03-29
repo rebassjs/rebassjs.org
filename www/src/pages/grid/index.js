@@ -34,7 +34,7 @@ const scope = {
 
 const dec = state => ({ index: state.index - 1 })
 const inc = state => ({ index: state.index + 1 })
-const toggle = key => state => ({ [key]: !state[key] })
+// const toggle = key => state => ({ [key]: !state[key] })
 
 const Toolbar = ({
   setState,
