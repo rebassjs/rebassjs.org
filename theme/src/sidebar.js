@@ -1,11 +1,8 @@
 import React from 'react'
 import { Flex, Box, Text } from 'rebass'
-import styled from 'styled-components'
 import { Location } from '@reach/router'
 import Sidepane from 'sidepane'
 import NavLink from './nav-link'
-
-const breakpoint = 'screen and (min-width:40em)'
 
 const removeSlash = str => str.replace(/\/$/, '')
 

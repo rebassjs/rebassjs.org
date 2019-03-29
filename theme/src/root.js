@@ -1,8 +1,7 @@
 // root layout
 import React from 'react'
-import styled, { ThemeProvider, createGlobalStyle } from 'styled-components'
+import { ThemeProvider, createGlobalStyle } from 'styled-components'
 import { MDXProvider } from '@mdx-js/tag'
-import { Box, Heading, Link } from 'rebass'
 import components from './components'
 import theme from './theme'
 
