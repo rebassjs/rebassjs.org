@@ -5089,10 +5089,10 @@ gatsby-mdx@^0.4.0:
     unist-util-remove "^1.0.1"
     unist-util-visit "^1.4.0"
 
-gatsby-plugin-compile-es6-packages@^1.0.6:
-  version "1.0.6"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-compile-es6-packages/-/gatsby-plugin-compile-es6-packages-1.0.6.tgz#4c864d9fa697dc5b41b4b5c9e4215c49b722f086"
-  integrity sha512-yUW+6NWNBpj43jS3gFRRt5mZ4P7xRbTPMSF8lrtJ+TOLcfJum5OAki1Be1yZHM7HSM68L9eipHIgm82pW1RdOg==
+gatsby-plugin-compile-es6-packages@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-compile-es6-packages/-/gatsby-plugin-compile-es6-packages-2.0.0.tgz#152726a561178b3f02ba35a63b785eb367d334c2"
+  integrity sha512-2WYSqDt4EM2yko/srSLYoKePArIfzpEsXNpP6SLYlRvlYsnwZ7acFPT5rdsyXHjtQoHHprybYimVnu3HiGcLaQ==
   dependencies:
     "@babel/runtime" "^7.0.0"
     regex-escape "^3.4.8"
