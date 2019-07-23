@@ -11,7 +11,7 @@
     "icon": "npx repng src/Icon.js -w 512 -h 512 -d static -f icon.png"
   },
   "dependencies": {
-    "@mdx-js/mdx": "^0.20.2",
+    "@mdx-js/mdx": "^1.1.0",
     "@mdx-js/tag": "^0.18.0",
     "@rebass/gatsby-theme-docs": "^1.0.0-0",
     "@rebass/grid": "^6.0.0-7",
